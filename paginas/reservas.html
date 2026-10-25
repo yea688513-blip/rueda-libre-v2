@@ -15,19 +15,80 @@
         <a href="tarifas.html">Tarifas</a>
         <a href="tarifas.html#rutas">Rutas</a>
         <a href="reservas.html">Reservas</a>
+        <img src="../img/logo.jpeg" alt="Logo Rueda Libre" width="700" height="400">
     </header>
 
     <main>
-        <img src="../img/logo.jpeg" alt="Logo Rueda Libre" width="700" height="400">
-        <span></br><b>Escribenos</b></br></span>
-        <a href="mailto:info@ruedalibre.com">Email: info@ruedalibre.com</a>
         <section>
-            <h2>Horario de atención</h2>
-            <ul>
-                <li><b>Lunes a Viernes→</b>7:00 am - 7:00 pm</li>
-                <li><b>Sábados, domingos y festivos→</b>6:00 am - 2:00 pm</li>
-            </ul>
+            <h2>Formulario de reserva</h2>
+            <form method="post">
+
+                <fieldset>
+                    <legend>Tus datos</legend>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required><br><br>
+
+                    <label for="identificacion">Numero de documento:</label>
+                    <input type="text" id="identificacion" name="identificacion" required><br><br>
+
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="celular">Celular:</label>
+                    <input type="tel" id="celular" name="celular" required><br><br>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Tu alquiler</legend>
+
+                    <label for="fecha">Fecha de reserva:</label>
+                    <input type="date" id="fecha" name="fecha" required><br><br>
+                    <label for="bicicleta">Tipo de bicicleta:</label>
+                    <select id="bicicleta" name="bicicleta" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="urbana">Bicicleta Urbana</option>
+                        <option value="montaña">Bicicleta de Montaña</option>
+                        <option value="electrica">Bicicleta Eléctrica</option>
+                    </select><br><br>
+                   
+                    <label for="plan">Plan:</label>
+                    <input type="text" id="plan" name="plan" list="plan-options" required>
+                    <datalist id="plan-options">
+                        <option value="1 hora">
+                        <option value="Medio dia (4 h)">
+                        <option value="Dia completo">
+                    </datalist>
+
+                    <label for="cantidadB">Cantidad de biciletas</label>
+                    <input type="number" id="cantidadB" name="cantidadB" required><br><br>
+                    
+                    <label for="recorridoG">Recorrido guiado</label>
+                    <input type="text" id="recorridoG" name="recorridoG" required><br><br>
+                    <datalist>
+                        <option
+                    </datalist>
+                    
+                </fieldset>
+                <fieldset>
+                    <label for="Confirmacion">Confirmacion</label>
+                    <button type="submit" value="Reservar">Reservar</button>
+                </fieldset>
+            </form>
+            <section>
+                <h2>Horario de atención</h2>
+                <ul>
+                    <li><b>Lunes a Viernes→</b>7:00 am - 7:00 pm</li>
+                    <li><b>Sábados, domingos y festivos→</b>6:00 am - 2:00 pm</li>
+                </ul>
+            </section>
         </section>
+
+        <small></br><b>Escribenos</b></brsm /small>
+            <a href="mailto:info@ruedalibre.com">Email: info@ruedalibre.com</a>
+
+            </section>
+
     </main>
 
     <footer>

@@ -6,12 +6,20 @@
 
 .title{
     background-color:#14213D;
+    background-image: url("../img/favicon-index.png");
+    background-size:contain;
+    
+    background-blend-mode: overlay;
+  background-size: center;
+  background-position: cover;
     display: flex;
     text-align: center;
     justify-content: center;
     flex-direction: column;
     color:#faf6ef;
     border-radius: 30px;
+    padding: 15px 0px 15px 0px;
+    gap: 15px;
 }
 
 
@@ -23,17 +31,24 @@
 
 .div {
     background-color:  #FAF6EF;
+     background-image: url("../img/favicon-index.png");
+    background-size: 10 px;
+    
+    background-blend-mode: darken;
+  background-repeat: repeat;
+  background-position: cover;
 }
 
 .main {
     background-color: #FAF6EF;
-    max-width: 700px;
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20 px;
     gap: 15px;
+    
 
 }
 
@@ -55,19 +70,24 @@ section {
     background-color: #ffffFf;
     display: flex;
     flex-direction: column;
-    max-width: 700px;
+    width: 1400px;
     border-radius: 30px;
     gap: 15px;
+    border: 5px groove;
+    border-color: #14213D;
+    padding: 15px;
+
 }
 
 a {
-    color:#FAF6EF;
-     background-color:#14213D; 
-     
-}
+    color:#F39A2B;
+    text-decoration: none;
+
+    }
 
 a:hover{
-color:#65c919;
+background-color:#65c919;
+color:white;
     
 }
 
@@ -87,6 +107,16 @@ color:#65c919;
     max-width: 70%;
 }
 
-.pirobo{
-    max-width: 1000;
+.button_a{
+    background-color: #F39A2B;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: #14213D;
+
+}
+
+.centrar{
+    display: flex;
+    justify-items: center;
+    width: 1400px;
 }

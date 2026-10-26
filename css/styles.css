@@ -11,13 +11,10 @@
     justify-content: center;
     flex-direction: column;
     color:#faf6ef;
-    max-width: 850px;
     border-radius: 30px;
 }
 
-title:hover{
-    color:#65c919;
-}
+
 
 .fond {
     background-color:#14213D;
@@ -25,7 +22,7 @@ title:hover{
 }
 
 .div {
-    background-color:  #FAF6EF
+    background-color:  #FAF6EF;
 }
 
 .main {
@@ -75,7 +72,7 @@ color:#65c919;
 }
 
 .beneficios{
-    color: #F39A2B;
+    background-color:#F39A2B;
 }
 
 .footer{
@@ -88,4 +85,8 @@ color:#65c919;
     display: flex;
     justify-items: center;
     max-width: 70%;
+}
+
+.pirobo{
+    max-width: 1000;
 }

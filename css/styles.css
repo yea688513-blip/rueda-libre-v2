@@ -1,3 +1,17 @@
+:root {
+ --bottonEn: #1E7A4F;
+--bottonS:#F39A2B;
+--tittle: #14213D;
+--fondo:#FAF6EF;
+--secondT:#5B6470;
+
+
+}
+
+
+
+
+
 body {
     cursor: url("../img/este.png") 0 0, auto;
 }
@@ -26,7 +40,8 @@ body {
     border-radius: 30px;
     padding: 15px 0px 15px 0px;
     gap: 15px;
-}
+    
+}  
 
 
 
@@ -125,7 +140,10 @@ cursor: url("../img/nivel.png") 0 0, auto;
 
 .centrar{
     display: flex;
-    justify-items: center;
-    width: 1400px;
+    align-items: center;
+    max-width: 1400px;
 }
 
+.botones{
+    width: 100px;
+}

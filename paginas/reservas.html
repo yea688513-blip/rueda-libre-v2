@@ -33,15 +33,15 @@
                         title="debe contener almenos 3 caracteres" placeholder="Nombre completo"><br><br>
 
                     <label for="identificacion">Numero de documento:</label>
-                    <input type="number" id="identificacion" name="identificacion" minlength="6" maxlength="10"
-                        title="solo numeros"><br><br>
+                    <input type="number" id="identificacion" name="identificacion" minlength="6" maxlength="10" 
+                    title="solo numeros" placeholder="ID"><br><br>
 
                     <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" title="Correo valido" required><br><br>
+                    <input type="email" id="email" name="email" title="Correo valido" placeholder="rueda@libre.com" required><br><br>
 
                     <label for="celular">Celular:</label>
                     <input type="tel" id="celular" name="celular" pattern="^3[0-9]{9}$"
-                        title="Tu numero debe empezar por 3 y debe contener diez digitos" required><br><br>
+                        title="Tu numero debe empezar por 3 y debe contener diez digitos" placeholder="3 _ _ _ _ _ _ _ _ _ " required><br><br>
 
                 </fieldset>
 
@@ -53,7 +53,7 @@
                         title="se aceptan reservas a partir del 1 de agosto hasta el 31 de diciembre del presente año"
                         required><br><br>
                     <label for="bicicleta">Tipo de bicicleta:</label>
-                    <select id="bicicleta" name="bicicleta" required>
+                    <select id="bicicleta" name="bicicleta"  required>
                         <option value="">Seleccione una opción</option>
                         <option value="urbana">Bicicleta Urbana</option>
                         <option value="montaña">Bicicleta de Montaña</option>
@@ -61,7 +61,7 @@
                     </select><br><br>
 
                     <label for="plan">Plan:</label>
-                    <input type="text" id="plan" name="plan" list="plan-options" required>
+                    <input type="text" id="plan" name="plan" list="plan-options" placeholder="Ruta" required>
                     <datalist id="plan-options">
                         <option value="1 hora">
                         <option value="Medio dia (4 h)">
@@ -88,7 +88,7 @@
 
 
                         <label for="comentarios">Comentarios</label>
-                        <textarea id="comentarios" name="comentarios" maxlength="300" cols="90" rows="6"
+                        <textarea id="comentarios" name="comentarios" maxlength="300" cols="90" rows="6" placeholder="Dudas, comentario, sugerencias"
                             title="ingresa algun comentario"></textarea>
                     </fieldset>
                 </fieldset>

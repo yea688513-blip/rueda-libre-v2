@@ -1,1 +1,74 @@
+==================================================
+BITÁCORA DE DESARROLLO - PROYECTO: RUEDA LIBRE
+==================================================
 
+1. INFORMACIÓN GENERAL DEL PROYECTO
+--------------------------------------------------
+- Nombre del proyecto: Rueda Libre (Alquiler de bicicletas en Medellín)
+- Repositorio local / remoto: carpeta `rueda-libre` / GitHub (público)
+- Estructura inicial creada: index.html, carpeta paginas/ (con tarifas.html y reservas.html), carpeta img/, bitacora.txt
+
+2. ANÁLISIS DE PETICIÓN DE RED (DEVTOOLS - PASO 4)
+--------------------------------------------------
+- URL completa: http://127.0.0.1:5500/index.html
+- Protocolo: HTTP/1.1
+- Host: 127.0.0.1:5500
+- Puerto: 5500
+- Ruta: /index.html
+- Método de petición: GET
+- Código de estado: 200 OK 
+  (Significa que la petición fue procesada y respondida exitosamente por el servidor).
+
+3. PRUEBA DE RUTA INEXISTENTE (PASO 5)
+--------------------------------------------------
+- Ruta probada: /promociones.html
+- Código de respuesta del servidor: 404 Not Found
+  (Indica que el recurso o la ruta solicitada no existe en el servidor local).
+
+4. ROLES DE LAS TECNOLOGÍAS EN RUEDA LIBRE (PASO 6)
+--------------------------------------------------
+- HTML (Estructura):
+  * Rol: Es el esqueleto y la base semántica de la página web. Define la jerarquía de los contenidos, formularios y secciones.
+  * Ejemplo concreto: La estructura de la sección de tarifas y el formulario de reserva de bicicletas mediante etiquetas como <form>, <input>, <table> y <section>.
+
+- CSS (Presentación y Estilo):
+  * Rol: Se encarga del diseño visual, la estética, la adaptación responsiva y la experiencia de usuario.
+  * Ejemplo concreto: El diseño del layout con CSS Grid, los colores institucionales del negocio y las tarjetas de presentación para cada tipo de bicicleta (montaña, urbanas, eléctricas).
+
+- JavaScript (Comportamiento e Interactividad):
+  * Rol: Aporta la lógica de programación en el lado del cliente, permitiendo interactuar dinámicamente con las acciones del usuario.
+  * Ejemplo concreto: El cálculo automático del precio total de alquiler al seleccionar el número de días u horas en el formulario de reservas, o la validación de campos obligatorios.
+
+5. CREACIÓN DE VISTAS Y NAVEGACIÓN (VERSIÓN v0.1)
+--------------------------------------------------
+- Creación de paginas/reservas.html con estructura base, título, correo de contacto y horario de atención (lista de definiciones).
+- Implementación del menú de navegación (<nav>) unificado y pie de página en las tres páginas del sitio.
+- Verificación en DevTools (Network) de la navegación cruzada exitosa sin errores de recursos.
+
+6. TABLA DE RUTAS UTILIZADAS (ORIGEN -> DESTINO -> RUTA ESCRITA)
+--------------------------------------------------
+| Archivo de Origen | Página de Destino | Ruta Escrita en el Enlace (`href`) |
+| :--- | :--- | :--- |
+| index.html (Raíz) | Inicio (index.html) | index.html |
+| index.html (Raíz) | Tarifas (tarifas.html) | paginas/tarifas.html |
+| index.html (Raíz) | Rutas (#rutas) | paginas/tarifas.html#rutas |
+| index.html (Raíz) | Reservas (reservas.html) | paginas/reservas.html |
+| paginas/ (tarifas / reservas) | Inicio (index.html) | ../index.html |
+| paginas/ (tarifas / reservas) | Tarifas (tarifas.html) | tarifas.html |
+| paginas/ (tarifas / reservas) | Rutas (#rutas) | tarifas.html#rutas (o #rutas) |
+| paginas/ (tarifas / reservas) | Reservas (reservas.html) | reservas.html |
+
+7. REESTRUCTURACIÓN SEMÁNTICA (SEO Y ACCESIBILIDAD)
+--------------------------------------------------
+- Definición de regiones en cada página: <header>, <nav>, <main>, <section>, <article>, <aside> y <footer>.
+- Agrupación del nombre del negocio y navegación en el encabezado.
+- Conversión de bloques temáticos en <section> y servicios en <article>.
+- Inclusión de contenido complementario (<aside>) para listas de qué llevar y horarios.
+- Verificación de jerarquía de encabezados, unicidad de <main> y actualización de control de versiones con commit y push.
+
+8. AUDITORÍA DE ACCESIBILIDAD, CONTRASTE Y DESPLIEGUE (GITHUB PAGES)
+--------------------------------------------------
+- Auditoría completada: textos alternativos, jerarquía de encabezados, textos de enlace descriptivos, idioma del documento y navegación por teclado[cite: 7].
+- Evaluación de contraste de la paleta institucional (Verde Ruta, Naranja Pedal, Azul Noche, Crema, Gris Asfalto) y definición del mapa de uso de color para texto, fondos, botones y enlaces[cite: 7].
+- Publicación exitosa del sitio en internet mediante GitHub Pages desde la rama principal[cite: 7].
+- Verificación de enlaces, recursos e imágenes en línea y registro del enlace público en el repositorio y la bitácora[cite: 7].

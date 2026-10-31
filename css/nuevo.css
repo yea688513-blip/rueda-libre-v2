@@ -1,0 +1,21 @@
+:root {
+    --color-botton:#1E7A4F;
+    --colorS-botton: #F39A2B;
+   --title:#14213D;
+   --fond: #FAF6EF;	
+   --textS: #5B6470;
+
+    
+}
+
+
+
+
+
+.montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+

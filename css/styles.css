@@ -25,21 +25,21 @@ body {
 
 
 .title{
-    background-color:#14213D;
-    background-image: url("../img/favicon-index.png");
-    background-size:contain;
-    
-    background-blend-mode: overlay;
-  background-size: center;
-  background-position: cover;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;
-    color:#faf6ef;
-    border-radius: 30px;
-    padding: 15px 0px 15px 0px;
-    gap: 15px;
+        background-color:#14213D;
+        background-image: url("../img/favicon-index.png");
+        background-size:contain;
+        
+        background-blend-mode: overlay;
+    background-size: center;
+    background-position: cover;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        color:#faf6ef;
+        border-radius: 30px;
+        padding: 15px 0px 15px 0px;
+        gap: 15px;
     
 }  
 
@@ -84,7 +84,7 @@ h2, h3, h4 {
 }
 
 p {
-    color: #5b6470;
+    color: #5B6470;
 }
 
 section {
@@ -116,6 +116,11 @@ cursor: url("../img/nivel.png") 0 0, auto;
 
 .beneficios{
     background-color:#F39A2B;
+    border-radius: 15px;
+    border-color: #14213D;
+    padding: 10px;
+    display: flex;
+    justify-items: center;
 }
 
 .footer{
@@ -141,9 +146,61 @@ cursor: url("../img/nivel.png") 0 0, auto;
 .centrar{
     display: flex;
     align-items: center;
+    justify-items: center;
     max-width: 1400px;
 }
 
 .botones{
     width: 100px;
+}
+
+.titleB{
+     background-color: #F39A2B;
+    color: #14213D;
+    
+   
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+  
+    border-radius: 50px;
+    border-color: #14213D;
+
+    padding: 15px 0px 15px 0px;
+    gap: 15px;
+
+
+}
+.flota{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(21rem,1fr));
+    gap: 2rem;
+}
+
+.bici{
+    background-color: #ffffFf;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    gap: 15px;
+    border: 5px groove;
+    border-color: #14213D;
+    padding: 15px;
+
+}
+
+.improw{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.formulario {
+    background-color: #ffffFf;
+    border-radius: 30px;
+    gap: 15px;
+    border: 5px groove;
+    border-color: #14213D;
+    padding: 15px;
 }

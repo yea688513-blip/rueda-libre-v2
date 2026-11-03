@@ -280,11 +280,11 @@ paginas\reservas.html
                             <option value="Dia completo">
                         </datalist>
 
-                        <label for="cantidadB"><b>Cantidad de biciletas</b></label>
+                        <label for="cantidadB"><b>Cantidad de biciletas:</b></label>
                         <input type="number" id="cantidadB" name="cantidadB" min="1" max="6"
                             title="Ingresa la cantidad de bicicletas minimo 1, maximo 6" required><br><br>
 
-                        <label for="recorridoG"><b>Recorrido guiado</b></label>
+                        <label for="recorridoG"><b>Recorrido guiado:</b></label>
 
 
                         <select id="recorridoG" name="recorridoG" title="deseas un recorrido guiado?">

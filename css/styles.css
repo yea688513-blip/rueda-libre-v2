@@ -1,207 +1,240 @@
+/* ==========================================
+   VARIABLES DE COLOR (PALETA OFICIAL DE MARCA)
+   ========================================== */
 :root {
- --bottonEn: #1E7A4F;
---bottonS:#F39A2B;
---tittle: #14213D;
---fondo:#FAF6EF;
---secondT:#5B6470;
-
-
+    --verde-ruta: #1E7A4F;     /* Botones principales y enlaces */
+    --naranja-pedal: #F39A2B;  /* Destacados y botones secundarios */
+    --azul-noche: #14213D;     /* Títulos, encabezados y bordes */
+    --crema: #FAF6EF;          /* Fondo general */
+    --gris-asfalto: #5B6470;   /* Texto secundario y párrafos */
+    --blanco: #FFFFFF;         /* Fondos de tarjetas y formularios */
 }
 
-
-
-
-
+/* ==========================================
+   ESTILOS GENERALES Y BASE
+   ========================================== */
 body {
     cursor: url("../img/este.png") 0 0, auto;
+    background-color: var(--crema);
+    color: var(--gris-asfalto);
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+a 
+.fondog {
+    background-color: var(--crema);
 }
 
+/* Enlaces (Verde Ruta sobre Crema pasa accesibilidad con 4.97:1) */
+a {
+    color: var(--verde-ruta);
+    text-decoration: underline;
+    font-weight: 600;
+}
 
+a:hover {
+    color: var(--naranja-pedal);
+    background-color: transparent;
+    cursor: url("../img/nivel.png") 0 0, auto;
+}
 
-.fondog{
-    background-color: #ffffFf;
-   }
+/* Tipografía y encabezados */
+h1, h2, h3, h4 {
+    color: var(--blanco);
+}
 
+p {
+    color: var(--gris-asfalto);
+}
 
-
-.title{
-        background-color:#14213D;
-        background-image: url("../img/favicon-index.png");
-        background-size:contain;
-        
-        background-blend-mode: overlay;
-    background-size: center;
-    background-position: cover;
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        flex-direction: column;
-        color:#faf6ef;
-        border-radius: 30px;
-        padding: 15px 0px 15px 0px;
-        gap: 15px;
-    
-}  
-
-
-
-.fond {
-    background-color:#14213D;
+.sub {
+    color: var(--azul-noche);
     max-width: 700px;
 }
 
+/* ==========================================
+   HEADER, FOOTER Y TÍTULOS
+   ========================================== */
+.title {
+    background-color: var(--azul-noche);
+    background-image: url("../img/favicon-index.png");
+    background-size: contain;
+    background-blend-mode: overlay;
+    background-position: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--crema);
+    border-radius: 30px;
+    padding: 15px 0;
+    gap: 15px;
+}
+
+.fond {
+    background-color: var(--azul-noche);
+    max-width: 700px;
+}
+
+/* ==========================================
+   ESTRUCTURA DE CONTENEDORES
+   ========================================== */
 .div {
-    background-color:  #FAF6EF;
-     background-image: url("../img/favicon-index.png");
-    background-size: 10 px;
-    
+    background-color: var(--crema);
+    background-image: url("../img/favicon-index.png");
+    background-size: 150px;
     background-blend-mode: darken;
-  background-repeat: repeat;
-  background-position: cover;
+    background-repeat: repeat;
+    background-position: center;
 }
 
 .main {
-    background-color: #FAF6EF;
+    background-color: var(--crema);
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20 px;
+    padding: 20px;
     gap: 15px;
-    
-
 }
 
-.sub{
-    color:#14213D;
-    max-width: 700px
-
+#main {
+    gap: 2rem;
 }
 
-h2, h3, h4 {
-    color:#14213D;
-}
-
-p {
-    color: #5B6470;
+.activo {
+    color: var(--crema);
 }
 
 section {
-    background-color: #ffffFf;
+    background-color: var(--blanco);
     display: flex;
     flex-direction: column;
-    width: 1400px;
+    width: 100%;
+    max-width: 1400px;
+    box-sizing: border-box;
     border-radius: 30px;
     gap: 15px;
-    border: 5px groove;
-    border-color: #14213D;
+    border: 5px groove var(--azul-noche);
     padding: 15px;
-
 }
 
-a {
-    color:#F39A2B;
-    text-decoration: none;
-
-    }
-
-a:hover{
-background-color:#65c919;
-color:white;
-cursor: url("../img/nivel.png") 0 0, auto;
-
-    
+.formulario {
+    background-color: var(--blanco);
+    border-radius: 30px;
+    gap: 15px;
+    border: 5px groove var(--azul-noche);
+    padding: 15px;
 }
 
-.beneficios{
-    background-color:#F39A2B;
-    border-radius: 15px;
-    border-color: #14213D;
-    padding: 10px;
-    
-    
-    justify-items: center;
-}
-
-.footer{
-    color:#65c919;
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-.orden{
-    display: flex;
-    justify-items: center;
-    max-width: 70%;
-}
-
-.button_a{
-    background-color: #F39A2B;
+/* ==========================================
+   BOTONES Y COMPONENTES INTERACTIVOS
+   ========================================== */
+/* Botones de navegación (Naranja Pedal con texto Azul Noche = 7.34:1 de contraste) */
+.button_a {
+    background-color: var(--naranja-pedal);
     padding: 10px 20px;
     border-radius: 30px;
-    color: #14213D;
-
+    color: var(--azul-noche) !important;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
 }
 
-.centrar{
-    display: flex;
-    align-items: center;
+#main .button_a title .activo{
+    color: var(--crema);
+}
+.button_a:hover {
+    background-color: var(--verde-ruta);
+    color: var(--blanco) !important;
+}
+
+/* Botones principales de envío/formulario (Verde Ruta con texto Blanco = 5.38:1) */
+button[type="submit"], 
+button.botones {
+    background-color: var(--verde-ruta);
+    color: var(--blanco);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover, 
+button.botones:hover {
+    background-color: var(--naranja-pedal);
+    color: var(--azul-noche);
+}
+
+.beneficios {
+    background-color: var(--naranja-pedal);
+    color: var(--azul-noche);
+    border-radius: 15px;
+    border: 1px solid var(--azul-noche);
+    padding: 10px;
     justify-items: center;
-    max-width: 1400px;
+    width:max-content;
 }
 
-.botones{
-    width: 100px;
-}
-
-.titleB{
-     background-color: #F39A2B;
-    color: #14213D;
-    
-   
+.titleB {
+    background-color: var(--naranja-pedal);
+    color: var(--azul-noche);
     display: flex;
     text-align: center;
     justify-content: center;
     flex-direction: column;
-  
     border-radius: 50px;
-    border-color: #14213D;
-
-    padding: 15px 0px 15px 0px;
+    border: 1px solid var(--azul-noche);
+    padding: 15px 0;
     gap: 15px;
-
-
 }
-.flota{
+
+/* ==========================================
+   REJILLA DE FLOTA Y TARJETAS
+   ========================================== */
+.flota {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(21rem,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
     gap: 2rem;
+    width: 100%;
 }
 
-.bici{
-    background-color: #ffffFf;
+.bici {
+    background-color: var(--blanco);
     display: flex;
     flex-direction: column;
     border-radius: 30px;
     gap: 15px;
-    border: 5px groove;
-    border-color: #14213D;
+    border: 5px groove var(--azul-noche);
     padding: 15px;
-
 }
 
-.improw{
+/* ==========================================
+   CLASES AUXILIARES Y LAYOUT
+   ========================================== */
+.centrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1400px;
+}
+
+.improw {
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
 
-.formulario {
-    background-color: #ffffFf;
-    border-radius: 30px;
-    gap: 15px;
-    border: 5px groove;
-    border-color: #14213D;
-    padding: 15px;
+.orden {
+    display: flex;
+    justify-content: center;
+    max-width: 70%;
+}
+
+.footer {
+    color: var(--verde-ruta);
+    display: flex;
+    flex-direction: row-reverse;
 }

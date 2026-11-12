@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rueda Nocturna</title>
+    <link rel="stylesheet" href="./src/output.css">
+</head>
+
+<body class="bg-slate-950 py-10 px-4 space-y-8">
+
+    <!-- ───── HEADER CARD ───── -->
+    <section class="w-full max-w-3xl bg-slate-900 p-8 md:p-12 rounded-2xl shadow-2xl text-center space-y-6 mx-auto">
+        <div class="inline-block bg-emerald-500/10 text-emerald-400 text-xs font-semibold uppercase tracking-wider px-4 py-1.5 rounded-full border border-emerald-500/30">
+            Nuevo · Jueves a sábado
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Rueda Nocturna
+        </h1>
+        <p class="text-lg md:text-xl text-slate-300 font-normal leading-relaxed max-w-xl mx-auto">
+            Descubre Medellín en bici cuando se encienden las luces
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
+                <span class="block text-2xl font-bold text-white tracking-wide">3 rutas</span>
+                <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Disponibles</span>
+            </div>
+            <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
+                <span class="block text-2xl font-bold text-emerald-400 tracking-wide">Desde $55.000</span>
+                <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Por persona</span>
+            </div>
+        </div>
+        <a href="#inscripcion"
+            class="inline-block w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 focus:outline-none focus:ring-4 focus:ring-emerald-500/50 active:bg-emerald-600 text-slate-950 font-bold uppercase tracking-wide px-8 py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
+            Inscríbete
+        </a>
+    </section>
+
+    <!-- ───── SECCIÓN RUTAS ───── -->
+    <main class="space-y-6 max-w-3xl mx-auto">
+        <h2 class="text-2xl font-extrabold text-white tracking-tight text-center">Rutas Disponibles</h2>
+
+        <!-- ══ CARD 1 — Fácil (emerald) ══ -->
+        <!-- Acento: borde superior verde + fondo ligeramente verde -->
+        <section class="w-full bg-slate-900 rounded-2xl shadow-2xl text-center space-y-6 overflow-hidden border border-emerald-500/30">
+
+            <!-- Barra de acento superior -->
+            <div class="bg-emerald-500 h-1.5 w-full"></div>
+
+            <div class="p-8 md:p-12 space-y-6">
+                <!-- Badge nivel -->
+                <div class="inline-block bg-emerald-500/10 text-emerald-400 text-xs font-semibold uppercase tracking-wider px-4 py-1.5 rounded-full border border-emerald-500/30">
+                    ✦ Nivel: Fácil — Apto para todos
+                </div>
+
+                <img src="./img/centro.jpg" alt="Luces del centro"
+                    class="w-full h-56 object-cover rounded-xl mx-auto border border-emerald-500/20">
+
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                    Luces del centro
+                </h2>
+
+                <p class="text-lg text-slate-300 font-normal leading-relaxed max-w-xl mx-auto">
+                    Disfruta de la belleza iluminada del centro histórico de Medellín.
+                </p>
+
+                <!-- Indicador de esfuerzo visual -->
+                <div class="flex items-center justify-center gap-1.5">
+                    <span class="text-xs text-slate-400 uppercase tracking-wider mr-2">Esfuerzo</span>
+                    <span class="h-2.5 w-8 rounded-full bg-emerald-500"></span>
+                    <span class="h-2.5 w-8 rounded-full bg-slate-700"></span>
+                    <span class="h-2.5 w-8 rounded-full bg-slate-700"></span>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
+                        <span class="block text-2xl font-bold text-white tracking-wide">10 km</span>
+                        <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Distancia</span>
+                    </div>
+                    <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
+                        <span class="block text-2xl font-bold text-white tracking-wide">2 horas</span>
+                        <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Duración</span>
+                    </div>
+                    <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
+                        <span class="block text-2xl font-bold text-emerald-400 tracking-wide">$55.000</span>
+                        <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Por persona</span>
+                    </div>
+                </div>
+
+                <p class="text-slate-400 text-sm">📍 Punto de encuentro: <span class="text-white font-semibold">Sede central</span></p>
+
+                <a href="#inscripcion"
+                    class="inline-block w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 focus:outline-none focus:ring-4 focus:ring-emerald-500/50 active:bg-emerald-600 text-slate-950 font-bold uppercase tracking-wide px-8 py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
+                    Inscríbete
+                </a>
+            </div>
+        </section>
+
+        <!-- ══ CARD 2 — Medio (amber) ══ -->
+        <section class="w-full bg-slate-900 rounded-2xl shadow-2xl text-center space-y-6 overflow-hidden border border-amber-500/30">
+
+            <div class="bg-amber-500 h-1.5 w-full"></div>
+
+            <div class="p-8 md:p-12 space-y-6">
+                <div class="inline-block bg-amber-500/10 text-amber-400 text-xs font-semibold uppercase tracking-wider px-4 py-1.5 rounded-full border border-amber-500/30">
+                    ◈ Nivel: Medio — Algo de experiencia
+                </div>
+
+                <img src="./img/miradores.jpg" alt="Miradores de la ciudad"
+                    class="w-full h-56 object-cover rounded-xl mx-auto border border-amber-500/20">
+
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                    Miradores de la ciudad
+                </h2>
+
+                <p class="text-lg text-slate-300 font-normal leading-relaxed max-w-xl mx-auto">
+                    Explora los miradores más emblemáticos y disfruta de vistas panorámicas.
+                </p>
+
+                <!-- Indicador de esfuerzo visual -->
+                <div class="flex items-center justify-center gap-1.5">
+                    <span class="text-xs text-slate-400 uppercase tracking-wider mr-2">Esfuerzo</span>
+                    <span class="h-2.5 w-8 rounded-full bg-amber-500"></span>
+                    <span class="h-2.5 w-8 rounded-full bg-amber-500"></span>
+                    <span class="h-2.5 w-8 rounded-full bg-slate-700"></span>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
+                        <span class="block text-2xl font-bold text-white tracking-wide">16 km</span>
+                        <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Distancia</span>
+                    </div>
+                    <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
+                        <span class="block text-2xl font-bold text-white tracking-wide">3 horas</span>
+                        <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Duración</span>
+                    </div>
+                    <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
+                        <span class="block text-2xl font-bold text-emerald-400 tracking-wide">$75.000</span>
+                        <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Por persona</span>
+                    </div>
+                </div>
+
+                <p class="text-slate-400 text-sm">📍 Punto de encuentro: <span class="text-white font-semibold">Sede central</span></p>
+
+                <a href="#inscripcion"
+                    class="inline-block w-full sm:w-auto bg-amber-500 hover:bg-amber-400 focus:outline-none focus:ring-4 focus:ring-amber-500/50 active:bg-amber-600 text-slate-950 font-bold uppercase tracking-wide px-8 py-3.5 rounded-xl transition shadow-lg shadow-amber-500/20">
+                    Inscríbete
+                </a>
+            </div>
+        </section>
+
+        <!-- ══ CARD 3 — Avanzado (rose) ══ -->
+        <section class="w-full bg-slate-900 rounded-2xl shadow-2xl text-center space-y-6 overflow-hidden border border-rose-500/30">
+
+            <div class="bg-rose-500 h-1.5 w-full"></div>
+
+            <div class="p-8 md:p-12 space-y-6">
+                <div class="inline-block bg-rose-500/10 text-rose-400 text-xs font-semibold uppercase tracking-wider px-4 py-1.5 rounded-full border border-rose-500/30">
+                    ▲ Nivel: Avanzado — Ciclistas experimentados
+                </div>
+
+                <img src="./img/luna.jpg" alt="Luna en palmas"
+                    class="w-full h-56 object-cover rounded-xl mx-auto border border-rose-500/20">
+
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                    Luna en palmas
+                </h2>
+
+                <p class="text-lg text-slate-300 font-normal leading-relaxed max-w-xl mx-auto">
+                    Disfruta de la luz de la luna en el mirador más emblemático de la ciudad.
+                </p>
+
+                <!-- Indicador de esfuerzo visual -->
+                <div class="flex items-center justify-center gap-1.5">
+                    <span class="text-xs text-slate-400 uppercase tracking-wider mr-2">Esfuerzo</span>
+                    <span class="h-2.5 w-8 rounded-full bg-rose-500"></span>
+                    <span class="h-2.5 w-8 rounded-full bg-rose-500"></span>
+                    <span class="h-2.5 w-8 rounded-full bg-rose-500"></span>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
+                        <span class="block text-2xl font-bold text-white tracking-wide">22 km</span>
+                        <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Distancia</span>
+                    </div>
+                    <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
+                        <span class="block text-2xl font-bold text-white tracking-wide">3,5 horas</span>
+                        <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Duración</span>
+                    </div>
+                    <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
+                        <span class="block text-2xl font-bold text-emerald-400 tracking-wide">$95.000</span>
+                        <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Por persona</span>
+                    </div>
+                </div>
+
+                <p class="text-slate-400 text-sm">📍 Punto de encuentro: <span class="text-white font-semibold">Sede central</span></p>
+
+                <a href="#inscripcion"
+                    class="inline-block w-full sm:w-auto bg-rose-500 hover:bg-rose-400 focus:outline-none focus:ring-4 focus:ring-rose-500/50 active:bg-rose-600 text-white font-bold uppercase tracking-wide px-8 py-3.5 rounded-xl transition shadow-lg shadow-rose-500/20">
+                    Inscríbete
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

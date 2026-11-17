@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit de Componentes — Rueda Nocturna</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <!--
+    ╔══════════════════════════════════════════════════════╗
+    ║           KIT DE DISEÑO — REGLAS GLOBALES            ║
+    ╠══════════════════════════════════════════════════════╣
+    ║  Colores                                             ║
+    ║    Base claro    : crema / Azul Noche por sistema    ║
+    ║    Cards         : blanco / azul profundo           ║
+    ║    Campos        : gris claro / azul medio          ║
+    ║    Primario      : emerald-500 / emerald-400 hover  ║
+    ║    Texto verde   : emerald-700 / emerald-300 oscuro ║
+    ║    Alerta info   : sky-500                           ║
+    ║    Alerta éxito  : emerald-500                       ║
+    ║    Alerta aviso  : amber-500                         ║
+    ║                                                      ║
+    ║  Border-radius                                       ║
+    ║    Cards         : rounded-2xl                       ║
+    ║    Botones/inputs: rounded-xl                        ║
+    ║    Badges        : rounded-full                      ║
+    ║                                                      ║
+    ║  Espaciado                                           ║
+    ║    Padding card  : p-8 md:p-12                       ║
+    ║    Padding input : px-4 py-2.5                       ║
+    ║    Gap secciones : gap-6                             ║
+    ║    Gap elementos : gap-4                             ║
+    ╚══════════════════════════════════════════════════════╝
+    -->
+</head>
+
+<body class="bg-[#FAF6EF] dark:bg-[#14213D] text-[#14213D] dark:text-white py-10 px-4 space-y-16 max-w-4xl mx-auto">
+
+    <!-- ══════════════════════════════════════════════
+         SECCIÓN: BOTONES
+    ══════════════════════════════════════════════ -->
+    <section class="space-y-6">
+        <header class="border-b border-slate-300 dark:border-slate-700/60 pb-3">
+            <h2 class="text-2xl font-extrabold text-[#14213D] dark:text-white tracking-tight">Botones</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Tres variantes: primario, secundario y peligro. Todos con hover, focus y active.</p>
+        </header>
+
+        <div class="flex flex-wrap gap-4 items-center">
+
+            <!-- Botón Primario -->
+            <div class="space-y-1 text-center">
+                <a href="#"
+                    class="inline-block bg-emerald-500
+                           hover:bg-emerald-400
+                           focus:outline-none focus:ring-4 focus:ring-emerald-700 dark:focus:ring-emerald-300
+                           active:bg-emerald-600 active:scale-95
+                           text-slate-950 font-bold uppercase tracking-wide
+                           px-8 py-3.5 rounded-xl
+                           transition-all duration-200
+                           shadow-lg shadow-emerald-500/20">
+                    Inscríbete
+                </a>
+                <p class="text-xs text-slate-600 dark:text-slate-400">Primario</p>
+            </div>
+
+            <!-- Botón Secundario -->
+            <div class="space-y-1 text-center">
+                <a href="#"
+                    class="inline-block bg-slate-200 dark:bg-slate-800
+                           hover:bg-slate-300 dark:hover:bg-slate-700
+                           focus:outline-none focus:ring-4 focus:ring-slate-700 dark:focus:ring-slate-300
+                           active:bg-slate-300 dark:active:bg-slate-900 active:scale-95
+                           border border-slate-300 dark:border-slate-700/60
+                           text-[#14213D] dark:text-white font-bold uppercase tracking-wide
+                           px-8 py-3.5 rounded-xl
+                           transition-all duration-200">
+                    Ver ruta
+                </a>
+                <p class="text-xs text-slate-600 dark:text-slate-400">Secundario</p>
+            </div>
+
+            <!-- Botón Peligro / Cancelar -->
+            <div class="space-y-1 text-center">
+                <a href="#"
+                    class="inline-block bg-transparent
+                           border border-rose-700/60 dark:border-rose-500/60
+                           hover:bg-rose-100 dark:hover:bg-rose-500/10 hover:border-rose-700 dark:hover:border-rose-400
+                           focus:outline-none focus:ring-4 focus:ring-rose-700 dark:focus:ring-rose-300
+                           active:bg-rose-200 dark:active:bg-rose-500/20 active:scale-95
+                           text-rose-700 dark:text-rose-300 font-bold uppercase tracking-wide
+                           px-8 py-3.5 rounded-xl
+                           transition-all duration-200">
+                    Cancelar
+                </a>
+                <p class="text-xs text-slate-600 dark:text-slate-400">Peligro (outline)</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         SECCIÓN: ALERTAS
+    ══════════════════════════════════════════════ -->
+    <section class="space-y-6">
+        <header class="border-b border-slate-300 dark:border-slate-700/60 pb-3">
+            <h2 class="text-2xl font-extrabold text-[#14213D] dark:text-white tracking-tight">Alertas</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Fondo suave, borde lateral de color, título destacado y texto descriptivo.</p>
+        </header>
+
+        <div class="space-y-4">
+
+            <!-- Alerta Información -->
+            <div role="note"
+                 class="flex gap-4 bg-sky-50 dark:bg-sky-500/10 border-l-4 border-sky-700 dark:border-sky-400 rounded-xl px-6 py-4">
+                <span class="text-sky-700 dark:text-sky-300 text-xl mt-0.5">ℹ</span>
+                <div>
+                    <p class="font-bold text-sky-700 dark:text-sky-300 text-sm uppercase tracking-wider mb-1">Información</p>
+                    <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                        Las rutas nocturnas salen los jueves, viernes y sábados. Consulta la disponibilidad antes de inscribirte.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Alerta Éxito — marcada como aviso para lectores de pantalla -->
+            <div role="status" aria-live="polite"
+                 class="flex gap-4 bg-emerald-50 dark:bg-emerald-500/10 border-l-4 border-emerald-700 dark:border-emerald-400 rounded-xl px-6 py-4">
+                <span class="text-emerald-700 dark:text-emerald-300 text-xl mt-0.5">✓</span>
+                <div>
+                    <p class="font-bold text-emerald-700 dark:text-emerald-300 text-sm uppercase tracking-wider mb-1">
+                        Éxito
+                        <!-- Texto visible que indica que es un aviso -->
+                        <span class="ml-2 bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 text-xs font-semibold px-2 py-0.5 rounded-full border border-emerald-700/40 dark:border-emerald-500/30 normal-case tracking-normal">
+                            Aviso
+                        </span>
+                    </p>
+                    <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                        ¡Tu inscripción fue confirmada! Recibirás un correo con los detalles de la ruta.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Alerta Advertencia -->
+            <div role="alert"
+                 class="flex gap-4 bg-amber-50 dark:bg-amber-500/10 border-l-4 border-amber-700 dark:border-amber-400 rounded-xl px-6 py-4">
+                <span class="text-amber-700 dark:text-amber-300 text-xl mt-0.5">⚠</span>
+                <div>
+                    <p class="font-bold text-amber-700 dark:text-amber-300 text-sm uppercase tracking-wider mb-1">Advertencia</p>
+                    <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                        La ruta "Luna en palmas" requiere experiencia previa en ciclismo nocturno y buen estado físico. No recomendada para principiantes.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         SECCIÓN: FORMULARIO (INPUTS)
+    ══════════════════════════════════════════════ -->
+    <section class="space-y-6">
+        <header class="border-b border-slate-300 dark:border-slate-700/60 pb-3">
+            <h2 class="text-2xl font-extrabold text-[#14213D] dark:text-white tracking-tight">Campos de formulario</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Etiqueta visible, borde, relleno, placeholder, texto de ayuda y foco visible.</p>
+        </header>
+
+        <form class="space-y-6 max-w-md" novalidate>
+
+            <!-- Campo: Correo electrónico -->
+            <div class="space-y-1.5">
+                <label for="correo" class="block text-sm font-semibold text-slate-700 dark:text-slate-300 tracking-wide">
+                    Correo electrónico <span class="text-rose-700 dark:text-rose-300 ml-0.5">*</span>
+                </label>
+                <input
+                    id="correo"
+                    type="email"
+                    name="correo"
+                    placeholder="tu@correo.com"
+                    autocomplete="email"
+                    class="w-full bg-slate-100 dark:bg-[#263653] border border-slate-500 dark:border-slate-400 rounded-xl px-4 py-2.5
+                           text-[#14213D] dark:text-white placeholder-slate-600 dark:placeholder-slate-400 text-sm
+                           focus:outline-none focus:ring-4 focus:ring-emerald-700 dark:focus:ring-emerald-300 focus:border-emerald-700 dark:focus:border-emerald-300
+                           hover:border-slate-700 dark:hover:border-slate-300
+                           transition-all duration-200">
+                <p class="text-xs text-slate-600 dark:text-slate-400">Usaremos este correo para enviarte la confirmación de tu inscripción.</p>
+            </div>
+
+            <!-- Campo: Celular -->
+            <div class="space-y-1.5">
+                <label for="celular" class="block text-sm font-semibold text-slate-700 dark:text-slate-300 tracking-wide">
+                    Celular <span class="text-rose-700 dark:text-rose-300 ml-0.5">*</span>
+                </label>
+                <input
+                    id="celular"
+                    type="tel"
+                    name="celular"
+                    placeholder="300 123 4567"
+                    autocomplete="tel"
+                    class="w-full bg-slate-100 dark:bg-[#263653] border border-slate-500 dark:border-slate-400 rounded-xl px-4 py-2.5
+                           text-[#14213D] dark:text-white placeholder-slate-600 dark:placeholder-slate-400 text-sm
+                           focus:outline-none focus:ring-4 focus:ring-emerald-700 dark:focus:ring-emerald-300 focus:border-emerald-700 dark:focus:border-emerald-300
+                           hover:border-slate-700 dark:hover:border-slate-300
+                           transition-all duration-200">
+                <p class="text-xs text-slate-600 dark:text-slate-400">Número de contacto para coordinar el punto de encuentro.</p>
+            </div>
+
+        </form>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         SECCIÓN: CARDS (una de cada dificultad)
+    ══════════════════════════════════════════════ -->
+    <section class="space-y-6">
+        <header class="border-b border-slate-300 dark:border-slate-700/60 pb-3">
+            <h2 class="text-2xl font-extrabold text-[#14213D] dark:text-white tracking-tight">Tarjetas de ruta</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Una card por nivel de dificultad. Hover: sube, sombra de color, borde más vivo.</p>
+        </header>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- CARD Fácil -->
+            <article class="bg-white dark:bg-[#1b2b48] rounded-2xl shadow-xl overflow-hidden border border-emerald-700/40 dark:border-emerald-500/30
+                            transition-all duration-300
+                            hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-500/20 hover:border-emerald-700/60 dark:hover:border-emerald-500/60">
+                <div class="bg-emerald-500 h-1.5 w-full"></div>
+                <img src="./img/centro.jpg" alt="Luces del centro" class="w-full h-40 object-cover">
+                <div class="p-5 space-y-4">
+                    <span class="inline-block bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full border border-emerald-700/40 dark:border-emerald-500/30">
+                        ✦ Fácil
+                    </span>
+                    <h3 class="text-xl font-extrabold text-[#14213D] dark:text-white tracking-tight">Luces del centro</h3>
+                    <!-- Barra esfuerzo -->
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider mr-1">Esfuerzo</span>
+                        <span class="h-2 w-6 rounded-full bg-emerald-500"></span>
+                        <span class="h-2 w-6 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                        <span class="h-2 w-6 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                    </div>
+                    <div class="border-t border-slate-300 dark:border-slate-700/60"></div>
+                    <dl class="space-y-1.5">
+                        <div class="flex justify-between items-baseline">
+                            <dt class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400">Distancia</dt>
+                            <dd class="text-sm font-bold text-[#14213D] dark:text-white">10 km</dd>
+                        </div>
+                        <div class="flex justify-between items-baseline">
+                            <dt class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400">Duración</dt>
+                            <dd class="text-sm font-bold text-[#14213D] dark:text-white">2 h</dd>
+                        </div>
+                    </dl>
+                    <div class="border-t border-slate-300 dark:border-slate-700/60"></div>
+                    <p class="text-xl font-extrabold text-emerald-700 dark:text-emerald-300">$55.000 <span class="text-xs text-slate-600 dark:text-slate-400 font-normal">/ persona</span></p>
+                    <a href="#inscripcion"
+                        class="block w-full text-center bg-emerald-500 hover:bg-emerald-400 focus:outline-none focus:ring-4 focus:ring-emerald-700 dark:focus:ring-emerald-300 active:bg-emerald-600 active:scale-95
+                               text-slate-950 font-bold uppercase tracking-wide py-2.5 rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/20">
+                        Inscríbete
+                    </a>
+                </div>
+            </article>
+
+            <!-- CARD Medio -->
+            <article class="bg-white dark:bg-[#1b2b48] rounded-2xl shadow-xl overflow-hidden border border-amber-700/40 dark:border-amber-500/30
+                            transition-all duration-300
+                            hover:-translate-y-1 hover:shadow-2xl hover:shadow-amber-500/20 hover:border-amber-700/60 dark:hover:border-amber-500/60">
+                <div class="bg-amber-500 h-1.5 w-full"></div>
+                <img src="./img/miradores.jpg" alt="Miradores de la ciudad" class="w-full h-40 object-cover">
+                <div class="p-5 space-y-4">
+                    <span class="inline-block bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-300 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full border border-amber-700/40 dark:border-amber-500/30">
+                        ◈ Medio
+                    </span>
+                    <h3 class="text-xl font-extrabold text-[#14213D] dark:text-white tracking-tight">Miradores de la ciudad</h3>
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider mr-1">Esfuerzo</span>
+                        <span class="h-2 w-6 rounded-full bg-amber-500"></span>
+                        <span class="h-2 w-6 rounded-full bg-amber-500"></span>
+                        <span class="h-2 w-6 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                    </div>
+                    <div class="border-t border-slate-300 dark:border-slate-700/60"></div>
+                    <dl class="space-y-1.5">
+                        <div class="flex justify-between items-baseline">
+                            <dt class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400">Distancia</dt>
+                            <dd class="text-sm font-bold text-[#14213D] dark:text-white">16 km</dd>
+                        </div>
+                        <div class="flex justify-between items-baseline">
+                            <dt class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400">Duración</dt>
+                            <dd class="text-sm font-bold text-[#14213D] dark:text-white">3 h</dd>
+                        </div>
+                    </dl>
+                    <div class="border-t border-slate-300 dark:border-slate-700/60"></div>
+                    <p class="text-xl font-extrabold text-emerald-700 dark:text-emerald-300">$75.000 <span class="text-xs text-slate-600 dark:text-slate-400 font-normal">/ persona</span></p>
+                    <a href="#inscripcion"
+                        class="block w-full text-center bg-amber-500 hover:bg-amber-400 focus:outline-none focus:ring-4 focus:ring-amber-700 dark:focus:ring-amber-300 active:bg-amber-600 active:scale-95
+                               text-slate-950 font-bold uppercase tracking-wide py-2.5 rounded-xl transition-all duration-200 shadow-lg shadow-amber-500/20">
+                        Inscríbete
+                    </a>
+                </div>
+            </article>
+
+            <!-- CARD Avanzado -->
+            <article class="bg-white dark:bg-[#1b2b48] rounded-2xl shadow-xl overflow-hidden border border-rose-700/40 dark:border-rose-500/30
+                            transition-all duration-300
+                            hover:-translate-y-1 hover:shadow-2xl hover:shadow-rose-500/20 hover:border-rose-700/60 dark:border-rose-500/60">
+                <div class="bg-rose-500 h-1.5 w-full"></div>
+                <img src="./img/luna.jpg" alt="Luna en palmas" class="w-full h-40 object-cover">
+                <div class="p-5 space-y-4">
+                    <span class="inline-block bg-rose-50 dark:bg-rose-500/10 text-rose-700 dark:text-rose-300 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full border border-rose-700/40 dark:border-rose-500/30">
+                        ▲ Avanzado
+                    </span>
+                    <h3 class="text-xl font-extrabold text-[#14213D] dark:text-white tracking-tight">Luna en palmas</h3>
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider mr-1">Esfuerzo</span>
+                        <span class="h-2 w-6 rounded-full bg-rose-500"></span>
+                        <span class="h-2 w-6 rounded-full bg-rose-500"></span>
+                        <span class="h-2 w-6 rounded-full bg-rose-500"></span>
+                    </div>
+                    <div class="border-t border-slate-300 dark:border-slate-700/60"></div>
+                    <dl class="space-y-1.5">
+                        <div class="flex justify-between items-baseline">
+                            <dt class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400">Distancia</dt>
+                            <dd class="text-sm font-bold text-[#14213D] dark:text-white">22 km</dd>
+                        </div>
+                        <div class="flex justify-between items-baseline">
+                            <dt class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400">Duración</dt>
+                            <dd class="text-sm font-bold text-[#14213D] dark:text-white">3,5 h</dd>
+                        </div>
+                    </dl>
+                    <div class="border-t border-slate-300 dark:border-slate-700/60"></div>
+                    <p class="text-xl font-extrabold text-emerald-700 dark:text-emerald-300">$95.000 <span class="text-xs text-slate-600 dark:text-slate-400 font-normal">/ persona</span></p>
+                    <a href="#inscripcion"
+                            class="block w-full text-center bg-rose-500 hover:bg-rose-400 focus:outline-none focus:ring-4 focus:ring-rose-700 dark:focus:ring-rose-300 active:bg-rose-400 active:scale-95
+                               text-slate-950 font-bold uppercase tracking-wide py-2.5 rounded-xl transition-all duration-200 shadow-lg shadow-rose-500/20">
+                        Inscríbete
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+</body>
+</html>

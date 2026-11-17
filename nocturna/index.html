@@ -4,206 +4,882 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rueda Nocturna</title>
+    <title>Rueda Nocturna — Medellín en bici de noche</title>
     <link rel="stylesheet" href="./src/output.css">
+    <!--
+    ╔══════════════════════════════════════════════════════════════╗
+    ║            KIT DE DISEÑO — RUEDA NOCTURNA                    ║
+    ╠══════════════════════════════════════════════════════════════╣
+    ║  Contenedor   max-w-5xl  mx-auto  px-4 md:px-8              ║
+    ║  Colores      slate-950 (body) · slate-900 (card)            ║
+    ║               slate-800/80 (interno) · slate-700/60 (borde)  ║
+    ║               emerald-500 (primario/fácil)                   ║
+    ║               amber-500  (medio)  · rose-500 (avanzado)      ║
+    ║               sky-500    (info)                              ║
+    ║  Radios       rounded-2xl (cards) · rounded-xl (btn/input)   ║
+    ║               rounded-full (badges)                          ║
+    ║  Espaciado    p-5 (card sm) · p-8 md:p-12 (hero)            ║
+    ║               px-4 py-2.5 (inputs) · gap-4/6 (grids)        ║
+    ║  Layout       1 col base · 2 col sm · 3 col lg               ║
+    ║               Header: apilado base, fila desde md            ║
+    ║               Pasos:  1 col → 2 col sm → 4 col lg            ║
+    ║  Decisión grid vs flex — "¿Cómo funciona?":                  ║
+    ║    Se usa GRID porque los 4 pasos tienen peso visual igual,  ║
+    ║    necesitan alinearse en fila y columna simultáneamente,    ║
+    ║    y grid controla fácilmente 1→2→4 columnas por breakpoint. ║
+    ║    Flex habría requerido wrapping manual y ancho fijo.        ║
+    ╚══════════════════════════════════════════════════════════════╝
+    -->
 </head>
 
-<body class="bg-slate-950 py-10 px-4 space-y-8">
+<body class="bg-[#FAF6EF] dark:bg-[#14213D] text-[#14213D] dark:text-white">
 
-    <!-- ───── HEADER CARD ───── -->
-    <section class="w-full max-w-3xl bg-slate-900 p-8 md:p-12 rounded-2xl shadow-2xl text-center space-y-6 mx-auto">
-        <div class="inline-block bg-emerald-500/10 text-emerald-400 text-xs font-semibold uppercase tracking-wider px-4 py-1.5 rounded-full border border-emerald-500/30">
-            Nuevo · Jueves a sábado
+    <!-- ╔══════════════════════════════════════════════════╗
+     ║  ENCABEZADO                                      ║
+     ╚══════════════════════════════════════════════════╝ -->
+    <header
+        class="sticky top-0 z-50 bg-white/95 dark:bg-[#14213D]/95 backdrop-blur border-b border-slate-300 dark:border-slate-700/60">
+        <div class="max-w-5xl mx-auto px-4 md:px-8 py-3 md:py-4 flex items-center justify-between gap-4">
+
+            <!-- Logo -->
+            <a href="#hero" class="flex items-center gap-2 shrink-0">
+                <span class="text-emerald-700 dark:text-emerald-300 text-xl">🚲</span>
+                <span class="font-extrabold text-[#14213D] dark:text-white text-lg tracking-tight leading-none">
+                    Rueda<span class="text-emerald-700 dark:text-emerald-300">Nocturna</span>
+                </span>
+            </a>
+
+            <!-- Navegación — oculta en móvil, visible desde md -->
+            <nav aria-label="Secciones" class="hidden md:flex items-center gap-6">
+                <a href="#rutas"
+                    class="text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-700 dark:hover:text-emerald-300 focus:outline-none focus:text-emerald-700 dark:focus:text-emerald-300 transition-colors duration-150">
+                    Rutas
+                </a>
+                <a href="#como-funciona"
+                    class="text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-700 dark:hover:text-emerald-300 focus:outline-none focus:text-emerald-700 dark:focus:text-emerald-300 transition-colors duration-150">
+                    ¿Cómo funciona?
+                </a>
+                <a href="#inscripcion"
+                    class="text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-700 dark:hover:text-emerald-300 focus:outline-none focus:text-emerald-700 dark:focus:text-emerald-300 transition-colors duration-150">
+                    Inscripción
+                </a>
+                <a href="#componentes"
+                    class="text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-700 dark:hover:text-emerald-300 focus:outline-none focus:text-emerald-700 dark:focus:text-emerald-300 transition-colors duration-150">
+                    Componentes
+                </a>
+            </nav>
+
+            <!-- Botón siempre visible -->
+            <a href="#inscripcion"
+                class="shrink-0 bg-emerald-500 hover:bg-emerald-400 focus:outline-none focus:ring-4 focus:ring-emerald-700/50 dark:focus:ring-emerald-300/50 active:bg-emerald-600 active:scale-95 text-slate-950 font-bold uppercase tracking-wide px-4 py-2 md:px-6 md:py-2.5 text-xs md:text-sm rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/20">
+                Inscríbete
+            </a>
         </div>
-        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            Rueda Nocturna
-        </h1>
-        <p class="text-lg md:text-xl text-slate-300 font-normal leading-relaxed max-w-xl mx-auto">
-            Descubre Medellín en bici cuando se encienden las luces
-        </p>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-            <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
-                <span class="block text-2xl font-bold text-white tracking-wide">3 rutas</span>
-                <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Disponibles</span>
+    </header>
+
+    <main>
+
+        <!-- ╔══════════════════════════════════════════════════╗
+         ║  HERO                                            ║
+         ╚══════════════════════════════════════════════════╝ -->
+        <section id="hero" class="py-10 md:py-16 lg:py-20 px-4 md:px-8">
+            <div class="max-w-5xl mx-auto">
+                <div
+                    class="bg-white dark:bg-[#1b2b48] p-6 md:p-10 lg:p-14 rounded-2xl shadow-2xl text-center space-y-5 md:space-y-6">
+
+                    <div
+                        class="inline-block bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 text-xs font-semibold uppercase tracking-wider px-4 py-1.5 rounded-full border border-emerald-700/40 dark:border-emerald-500/30">
+                        Nuevo · Jueves a sábado
+                    </div>
+
+                    <h1
+                        class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#14213D] dark:text-white tracking-tight leading-tight">
+                        Rueda Nocturna
+                    </h1>
+
+                    <p
+                        class="text-base md:text-lg lg:text-xl text-slate-700 dark:text-slate-300 leading-relaxed max-w-xl mx-auto">
+                        Descubre Medellín en bici cuando se encienden las luces
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+                        <div
+                            class="w-full sm:w-auto bg-slate-100 dark:bg-[#263653] px-5 py-3 md:px-6 md:py-4 rounded-xl border border-slate-300 dark:border-slate-700/60">
+                            <span
+                                class="block text-xl md:text-2xl font-bold text-[#14213D] dark:text-white tracking-wide">3
+                                rutas</span>
+                            <span
+                                class="text-xs uppercase text-slate-600 dark:text-slate-400 font-medium tracking-wider">Disponibles</span>
+                        </div>
+                        <div
+                            class="w-full sm:w-auto bg-slate-100 dark:bg-[#263653] px-5 py-3 md:px-6 md:py-4 rounded-xl border border-slate-300 dark:border-slate-700/60">
+                            <span
+                                class="block text-xl md:text-2xl font-bold text-emerald-700 dark:text-emerald-300 tracking-wide">Desde
+                                $55.000</span>
+                            <span
+                                class="text-xs uppercase text-slate-600 dark:text-slate-400 font-medium tracking-wider">Por
+                                persona</span>
+                        </div>
+                    </div>
+
+                    <a href="#inscripcion"
+                        class="inline-block w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 focus:outline-none focus:ring-4 focus:ring-emerald-700/50 dark:focus:ring-emerald-300/50 active:bg-emerald-600 active:scale-95 text-slate-950 font-bold uppercase tracking-wide px-6 py-3 md:px-8 md:py-3.5 rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/20">
+                        Inscríbete
+                    </a>
+                </div>
             </div>
-            <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
-                <span class="block text-2xl font-bold text-emerald-400 tracking-wide">Desde $55.000</span>
-                <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Por persona</span>
+        </section>
+
+
+        <!-- ╔══════════════════════════════════════════════════╗
+         ║  RUTAS                                           ║
+         ╚══════════════════════════════════════════════════╝ -->
+        <section id="rutas" class="py-10 md:py-14 lg:py-20 px-4 md:px-8">
+            <div class="max-w-5xl mx-auto space-y-6 md:space-y-8">
+
+                <div class="text-center space-y-2">
+                    <h2
+                        class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#14213D] dark:text-white tracking-tight">
+                        Rutas Disponibles
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm md:text-base max-w-md mx-auto">
+                        Escoge la que mejor se adapte a tu nivel y únete a la aventura nocturna.
+                    </p>
+                </div>
             </div>
+        </section>
+
+
+
+
+        <!-- Grid: 1 col → 2 col sm → 3 col lg -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+
+            <!-- CARD Fácil -->
+            <article
+                class="bg-white dark:bg-[#1b2b48] rounded-2xl shadow-xl overflow-hidden border border-emerald-700/40 dark:border-emerald-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-500/20 hover:border-emerald-700/60 dark:hover:border-emerald-500/60">
+                <div class="bg-emerald-500 h-1.5 w-full"></div>
+                <img src="./img/centro.jpg" alt="Luces del centro" class="w-full h-40 object-cover">
+                <div class="p-4 md:p-5 space-y-3 md:space-y-4">
+                    <span
+                        class="inline-block bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full border border-emerald-700/40 dark:border-emerald-500/30">
+                        ✦ Fácil — Apto para todos
+                    </span>
+                    <h3 class="text-lg md:text-xl font-extrabold text-[#14213D] dark:text-white tracking-tight">
+                        Luces del centro</h3>
+                    <div class="flex items-center gap-1.5">
+                        <span
+                            class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider mr-1">Esfuerzo</span>
+                        <span class="h-2 w-6 rounded-full bg-emerald-500"></span>
+                        <span class="h-2 w-6 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                        <span class="h-2 w-6 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                    </div>
+                    <div class="border-t border-slate-300 dark:border-slate-700/60"></div>
+                    <dl class="space-y-1.5">
+                        <div class="flex justify-between items-baseline">
+                            <dt class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400">
+                                Distancia</dt>
+                            <dd class="text-sm font-bold text-[#14213D] dark:text-white">10 km</dd>
+                        </div>
+                        <div class="flex justify-between items-baseline">
+                            <dt class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400">
+                                Duración</dt>
+                            <dd class="text-sm font-bold text-[#14213D] dark:text-white">2 h</dd>
+                        </div>
+                        <div class="flex justify-between items-baseline">
+                            <dt class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400">
+                                Punto de encuentro</dt>
+                            <dd class="text-sm font-bold text-[#14213D] dark:text-white">Sede central
+                            </dd>
+                        </div>
+                    </dl>
+                    <div class="border-t border-slate-300 dark:border-slate-700/60"></div>
+                    <p class="text-lg md:text-xl font-extrabold text-emerald-700 dark:text-emerald-300">
+                        $55.000
+                        <span class="text-xs text-slate-600 dark:text-slate-400 font-normal">/
+                            persona</span>
+                    </p>
+                    <a href="#inscripcion"
+                        class="block w-full text-center bg-emerald-500 hover:bg-emerald-400 focus:outline-none focus:ring-4 focus:ring-emerald-700/50 dark:focus:ring-emerald-300/50 active:bg-emerald-600 active:scale-95 text-slate-950 font-bold uppercase tracking-wide py-2.5 rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/20">
+                        Inscríbete
+                    </a>
+                </div>
+            </article>
+
+            <!-- CARD Medio -->
+            <article
+                class="bg-white dark:bg-[#1b2b48] rounded-2xl shadow-xl overflow-hidden border border-amber-700/40 dark:border-amber-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-amber-500/20 hover:border-amber-700/60 dark:hover:border-amber-500/60">
+                <div class="bg-amber-500 h-1.5 w-full"></div>
+                <img src="./img/miradores.jpg" alt="Miradores de la ciudad" class="w-full h-40 object-cover">
+                <div class="p-4 md:p-5 space-y-3 md:space-y-4">
+                    <span
+                        class="inline-block bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-300 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full border border-amber-700/40 dark:border-amber-500/30">
+                        ◈ Medio — Algo de experiencia
+                    </span>
+                    <h3 class="text-lg md:text-xl font-extrabold text-[#14213D] dark:text-white tracking-tight">
+                        Miradores de la ciudad</h3>
+                    <div class="flex items-center gap-1.5">
+                        <span
+                            class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider mr-1">Esfuerzo</span>
+                        <span class="h-2 w-6 rounded-full bg-amber-500"></span>
+                        <span class="h-2 w-6 rounded-full bg-amber-500"></span>
+                        <span class="h-2 w-6 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                    </div>
+                    <div class="border-t border-slate-300 dark:border-slate-700/60"></div>
+                    <dl class="space-y-1.5">
+                        <div class="flex justify-between items-baseline">
+                            <dt class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400">
+                                Distancia</dt>
+                            <dd class="text-sm font-bold text-[#14213D] dark:text-white">16 km</dd>
+                        </div>
+                        <div class="flex justify-between items-baseline">
+                            <dt class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400">
+                                Duración</dt>
+                            <dd class="text-sm font-bold text-[#14213D] dark:text-white">3 h</dd>
+                        </div>
+                        <div class="flex justify-between items-baseline">
+                            <dt class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400">
+                                Punto de encuentro</dt>
+                            <dd class="text-sm font-bold text-[#14213D] dark:text-white">Sede central
+                            </dd>
+                        </div>
+                    </dl>
+                    <div class="border-t border-slate-300 dark:border-slate-700/60"></div>
+                    <p class="text-lg md:text-xl font-extrabold text-emerald-700 dark:text-emerald-300">
+                        $75.000
+                        <span class="text-xs text-slate-600 dark:text-slate-400 font-normal">/
+                            persona</span>
+                    </p>
+                    <a href="#inscripcion"
+                        class="block w-full text-center bg-amber-500 hover:bg-amber-400 focus:outline-none focus:ring-4 focus:ring-amber-700/50 dark:focus:ring-amber-300/50 active:bg-amber-600 active:scale-95 text-slate-950 font-bold uppercase tracking-wide py-2.5 rounded-xl transition-all duration-200 shadow-lg shadow-amber-500/20">
+                        Inscríbete
+                    </a>
+                </div>
+            </article>
+
+            <!-- CARD Avanzado -->
+            <article
+                class="bg-white dark:bg-[#1b2b48] rounded-2xl shadow-xl overflow-hidden border border-rose-700/40 dark:border-rose-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-rose-500/20 hover:border-rose-700/60 dark:hover:border-rose-500/60 sm:col-span-2 lg:col-span-1">
+                <div class="bg-rose-500 h-1.5 w-full"></div>
+                <img src="./img/luna.jpg" alt="Luna en palmas" class="w-full h-40 object-cover">
+                <div class="p-4 md:p-5 space-y-3 md:space-y-4">
+                    <span
+                        class="inline-block bg-rose-50 dark:bg-rose-500/10 text-rose-700 dark:text-rose-300 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full border border-rose-700/40 dark:border-rose-500/30">
+                        ▲ Avanzado — Ciclistas experimentados
+                    </span>
+                    <h3 class="text-lg md:text-xl font-extrabold text-[#14213D] dark:text-white tracking-tight">
+                        Luna en palmas</h3>
+                    <div class="flex items-center gap-1.5">
+                        <span
+                            class="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider mr-1">Esfuerzo</span>
+                        <span class="h-2 w-6 rounded-full bg-rose-500"></span>
+                        <span class="h-2 w-6 rounded-full bg-rose-500"></span>
+                        <span class="h-2 w-6 rounded-full bg-rose-500"></span>
+                    </div>
+                    <div class="border-t border-slate-300 dark:border-slate-700/60"></div>
+                    <dl class="space-y-1.5">
+                        <div class="flex justify-between items-baseline">
+                            <dt class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400">
+                                Distancia</dt>
+                            <dd class="text-sm font-bold text-[#14213D] dark:text-white">22 km</dd>
+                        </div>
+                        <div class="flex justify-between items-baseline">
+                            <dt class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400">
+                                Duración</dt>
+                            <dd class="text-sm font-bold text-[#14213D] dark:text-white">3,5 h</dd>
+                        </div>
+                        <div class="flex justify-between items-baseline">
+                            <dt class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400">
+                                Punto de encuentro</dt>
+                            <dd class="text-sm font-bold text-[#14213D] dark:text-white">Sede central
+                            </dd>
+                        </div>
+                    </dl>
+                    <div class="border-t border-slate-300 dark:border-slate-700/60"></div>
+                    <p class="text-lg md:text-xl font-extrabold text-emerald-700 dark:text-emerald-300">
+                        $95.000
+                        <span class="text-xs text-slate-600 dark:text-slate-400 font-normal">/
+                            persona</span>
+                    </p>
+                    <a href="#inscripcion"
+                        class="block w-full text-center bg-rose-500 hover:bg-rose-400 focus:outline-none focus:ring-4 focus:ring-rose-700/50 dark:focus:ring-rose-300/50 active:bg-rose-400 active:scale-95 text-slate-950 font-bold uppercase tracking-wide py-2.5 rounded-xl transition-all duration-200 shadow-lg shadow-rose-500/20">
+                        Inscríbete
+                    </a>
+                </div>
+            </article>
+
         </div>
-        <a href="#inscripcion"
-            class="inline-block w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 focus:outline-none focus:ring-4 focus:ring-emerald-500/50 active:bg-emerald-600 text-slate-950 font-bold uppercase tracking-wide px-8 py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
-            Inscríbete
-        </a>
-    </section>
+        </div>
+        </section>
 
-    <!-- ───── SECCIÓN RUTAS ───── -->
-    <main class="space-y-6 max-w-3xl mx-auto">
-        <h2 class="text-2xl font-extrabold text-white tracking-tight text-center">Rutas Disponibles</h2>
 
-        <!-- ══ CARD 1 — Fácil (emerald) ══ -->
-        <!-- Acento: borde superior verde + fondo ligeramente verde -->
-        <section class="w-full bg-slate-900 rounded-2xl shadow-2xl text-center space-y-6 overflow-hidden border border-emerald-500/30">
+        <!-- ╔══════════════════════════════════════════════════╗
+         ║  ¿CÓMO FUNCIONA?                                 ║
+         ║  Decisión: GRID (ver bitácora en <head>)         ║
+         ╚══════════════════════════════════════════════════╝ -->
+        <section id="como-funciona" class="py-10 md:py-14 lg:py-20 px-4 md:px-8 bg-[#f1ece2] dark:bg-[#101a30]">
+            <div class="max-w-5xl mx-auto space-y-6 md:space-y-10">
 
-            <!-- Barra de acento superior -->
-            <div class="bg-emerald-500 h-1.5 w-full"></div>
-
-            <div class="p-8 md:p-12 space-y-6">
-                <!-- Badge nivel -->
-                <div class="inline-block bg-emerald-500/10 text-emerald-400 text-xs font-semibold uppercase tracking-wider px-4 py-1.5 rounded-full border border-emerald-500/30">
-                    ✦ Nivel: Fácil — Apto para todos
+                <div class="text-center space-y-2">
+                    <h2
+                        class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#14213D] dark:text-white tracking-tight">
+                        ¿Cómo funciona?
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm md:text-base">Cuatro pasos para tu primera
+                        noche sobre ruedas.</p>
                 </div>
 
-                <img src="./img/centro.jpg" alt="Luces del centro"
-                    class="w-full h-56 object-cover rounded-xl mx-auto border border-emerald-500/20">
+                <!-- Grid 1→2 col sm→4 col lg -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
 
-                <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                    Luces del centro
-                </h2>
+                    <!-- Paso 1 -->
+                    <div
+                        class="bg-white dark:bg-[#1b2b48] rounded-2xl border border-slate-300 dark:border-slate-700/60 p-5 md:p-6 space-y-3 text-center transition-all duration-300 hover:-translate-y-1 hover:border-emerald-700/50 dark:hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/10">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-700/40 dark:border-emerald-500/30 rounded-full flex items-center justify-center mx-auto">
+                            <span class="text-emerald-700 dark:text-emerald-300 font-extrabold text-lg">1</span>
+                        </div>
+                        <h3 class="font-extrabold text-[#14213D] dark:text-white text-base md:text-lg">Elige tu ruta
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Revisa las tres opciones y
+                            elige la que mejor se ajuste a tu nivel y energía.</p>
+                    </div>
 
-                <p class="text-lg text-slate-300 font-normal leading-relaxed max-w-xl mx-auto">
-                    Disfruta de la belleza iluminada del centro histórico de Medellín.
-                </p>
+                    <!-- Paso 2 -->
+                    <div
+                        class="bg-white dark:bg-[#1b2b48] rounded-2xl border border-slate-300 dark:border-slate-700/60 p-5 md:p-6 space-y-3 text-center transition-all duration-300 hover:-translate-y-1 hover:border-emerald-700/50 dark:hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/10">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-700/40 dark:border-emerald-500/30 rounded-full flex items-center justify-center mx-auto">
+                            <span class="text-emerald-700 dark:text-emerald-300 font-extrabold text-lg">2</span>
+                        </div>
+                        <h3 class="font-extrabold text-[#14213D] dark:text-white text-base md:text-lg">Regístrate</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Completa el formulario con
+                            tu correo y celular. Te confirmaremos por mensaje.</p>
+                    </div>
 
-                <!-- Indicador de esfuerzo visual -->
-                <div class="flex items-center justify-center gap-1.5">
-                    <span class="text-xs text-slate-400 uppercase tracking-wider mr-2">Esfuerzo</span>
-                    <span class="h-2.5 w-8 rounded-full bg-emerald-500"></span>
-                    <span class="h-2.5 w-8 rounded-full bg-slate-700"></span>
-                    <span class="h-2.5 w-8 rounded-full bg-slate-700"></span>
+                    <!-- Paso 3 -->
+                    <div
+                        class="bg-white dark:bg-[#1b2b48] rounded-2xl border border-slate-300 dark:border-slate-700/60 p-5 md:p-6 space-y-3 text-center transition-all duration-300 hover:-translate-y-1 hover:border-emerald-700/50 dark:hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/10">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-700/40 dark:border-emerald-500/30 rounded-full flex items-center justify-center mx-auto">
+                            <span class="text-emerald-700 dark:text-emerald-300 font-extrabold text-lg">3</span>
+                        </div>
+                        <h3 class="font-extrabold text-[#14213D] dark:text-white text-base md:text-lg">Punto de
+                            encuentro</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Llega a la Sede Central 15
+                            minutos antes. Trae tu bici, casco y ganas.</p>
+                    </div>
+
+                    <!-- Paso 4 -->
+                    <div
+                        class="bg-white dark:bg-[#1b2b48] rounded-2xl border border-slate-300 dark:border-slate-700/60 p-5 md:p-6 space-y-3 text-center transition-all duration-300 hover:-translate-y-1 hover:border-emerald-700/50 dark:hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/10">
+                        <div
+                            class="w-10 h-10 md:w-12 md:h-12 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-700/40 dark:border-emerald-500/30 rounded-full flex items-center justify-center mx-auto">
+                            <span class="text-emerald-700 dark:text-emerald-300 font-extrabold text-lg">4</span>
+                        </div>
+                        <h3 class="font-extrabold text-[#14213D] dark:text-white text-base md:text-lg">¡A pedalear!</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Disfruta Medellín
+                            iluminada con una comunidad de ciclistas apasionados.</p>
+                    </div>
+
                 </div>
-
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
-                        <span class="block text-2xl font-bold text-white tracking-wide">10 km</span>
-                        <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Distancia</span>
-                    </div>
-                    <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
-                        <span class="block text-2xl font-bold text-white tracking-wide">2 horas</span>
-                        <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Duración</span>
-                    </div>
-                    <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
-                        <span class="block text-2xl font-bold text-emerald-400 tracking-wide">$55.000</span>
-                        <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Por persona</span>
-                    </div>
-                </div>
-
-                <p class="text-slate-400 text-sm">📍 Punto de encuentro: <span class="text-white font-semibold">Sede central</span></p>
-
-                <a href="#inscripcion"
-                    class="inline-block w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 focus:outline-none focus:ring-4 focus:ring-emerald-500/50 active:bg-emerald-600 text-slate-950 font-bold uppercase tracking-wide px-8 py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
-                    Inscríbete
-                </a>
             </div>
         </section>
 
-        <!-- ══ CARD 2 — Medio (amber) ══ -->
-        <section class="w-full bg-slate-900 rounded-2xl shadow-2xl text-center space-y-6 overflow-hidden border border-amber-500/30">
 
-            <div class="bg-amber-500 h-1.5 w-full"></div>
+        <!-- ╔══════════════════════════════════════════════════╗
+         ║  INSCRIPCIÓN (formulario + alertas)              ║
+         ╚══════════════════════════════════════════════════╝ -->
+        <section id="inscripcion" class="py-10 md:py-14 lg:py-20 px-4 md:px-8">
+            <div class="max-w-5xl mx-auto">
 
-            <div class="p-8 md:p-12 space-y-6">
-                <div class="inline-block bg-amber-500/10 text-amber-400 text-xs font-semibold uppercase tracking-wider px-4 py-1.5 rounded-full border border-amber-500/30">
-                    ◈ Nivel: Medio — Algo de experiencia
+                <div class="text-center space-y-2 mb-8 md:mb-10">
+                    <h2
+                        class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#14213D] dark:text-white tracking-tight">
+                        Inscripción a una ruta
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm md:text-base">Completa tus datos y elige
+                        cuántas personas asistirán.</p>
                 </div>
 
-                <img src="./img/miradores.jpg" alt="Miradores de la ciudad"
-                    class="w-full h-56 object-cover rounded-xl mx-auto border border-amber-500/20">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-start">
 
-                <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                    Miradores de la ciudad
-                </h2>
+                    <!-- Alertas -->
+                    <div class="space-y-4">
 
-                <p class="text-lg text-slate-300 font-normal leading-relaxed max-w-xl mx-auto">
-                    Explora los miradores más emblemáticos y disfruta de vistas panorámicas.
-                </p>
+                        <div role="note"
+                            class="flex gap-4 bg-sky-50 dark:bg-sky-500/10 border-l-4 border-sky-700 dark:border-sky-400 rounded-xl px-5 py-4">
+                            <span class="text-sky-700 dark:text-sky-300 text-xl mt-0.5 shrink-0">ℹ</span>
+                            <div>
+                                <p
+                                    class="font-bold text-sky-700 dark:text-sky-300 text-sm uppercase tracking-wider mb-1">
+                                    Información</p>
+                                <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                                    Las rutas salen jueves, viernes y sábados. Consulta disponibilidad antes de
+                                    inscribirte.
+                                </p>
+                            </div>
+                        </div>
 
-                <!-- Indicador de esfuerzo visual -->
-                <div class="flex items-center justify-center gap-1.5">
-                    <span class="text-xs text-slate-400 uppercase tracking-wider mr-2">Esfuerzo</span>
-                    <span class="h-2.5 w-8 rounded-full bg-amber-500"></span>
-                    <span class="h-2.5 w-8 rounded-full bg-amber-500"></span>
-                    <span class="h-2.5 w-8 rounded-full bg-slate-700"></span>
+                        <div role="status" aria-live="polite"
+                            class="flex gap-4 bg-emerald-50 dark:bg-emerald-500/10 border-l-4 border-emerald-700 dark:border-emerald-400 rounded-xl px-5 py-4">
+                            <span class="text-emerald-700 dark:text-emerald-300 text-xl mt-0.5 shrink-0">✓</span>
+                            <div>
+                                <p
+                                    class="font-bold text-emerald-700 dark:text-emerald-300 text-sm uppercase tracking-wider mb-1">
+                                    Éxito
+                                    <span
+                                        class="ml-2 bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 text-xs font-semibold px-2 py-0.5 rounded-full border border-emerald-700/40 dark:border-emerald-500/30 normal-case tracking-normal">
+                                        Aviso
+                                    </span>
+                                </p>
+                                <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                                    ¡Tu inscripción fue confirmada! Recibirás un correo con los detalles de la ruta.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div role="alert"
+                            class="flex gap-4 bg-amber-50 dark:bg-amber-500/10 border-l-4 border-amber-700 dark:border-amber-400 rounded-xl px-5 py-4">
+                            <span class="text-amber-700 dark:text-amber-300 text-xl mt-0.5 shrink-0">⚠</span>
+                            <div>
+                                <p
+                                    class="font-bold text-amber-700 dark:text-amber-300 text-sm uppercase tracking-wider mb-1">
+                                    Advertencia</p>
+                                <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                                    "Luna en palmas" requiere experiencia previa y buena condición física. No
+                                    recomendada para principiantes.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Formulario -->
+                    <form id="form-inscripcion"
+                        class="bg-white dark:bg-[#1b2b48] rounded-2xl border border-slate-300 dark:border-slate-700/60 p-5 md:p-8 space-y-5">
+                        <div class="space-y-1">
+                            <h3 class="text-xl font-extrabold text-[#14213D] dark:text-white">Datos del ciclista</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400">Todos los campos son obligatorios.</p>
+                        </div>
+
+                        <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <legend class="sr-only">Datos para la inscripción</legend>
+
+                            <div class="space-y-1.5">
+                                <label for="nombre"
+                                    class="block text-sm font-semibold text-slate-700 dark:text-slate-300 tracking-wide">
+                                    Nombre completo <span aria-hidden="true"
+                                        class="text-rose-700 dark:text-rose-300 ml-0.5">*</span>
+                                </label>
+                                <input id="nombre" type="text" name="nombre" minlength="3" pattern="(?=.*\S).{3,}"
+                                    autocomplete="name" required aria-describedby="nombre-ayuda"
+                                    placeholder="Tu nombre completo"
+                                    class="w-full bg-slate-100 dark:bg-[#263653] border border-slate-500 dark:border-slate-400 rounded-xl px-4 py-2.5
+                                          text-[#14213D] dark:text-white placeholder-slate-600 dark:placeholder-slate-400 text-sm
+                                          focus:outline-none focus:ring-4 focus:ring-emerald-700/50 dark:focus:ring-emerald-300/50 focus:border-emerald-700 dark:focus:border-emerald-300
+                                          hover:border-slate-700 dark:hover:border-slate-300 transition-all duration-200">
+                                <p id="nombre-ayuda" class="text-xs text-slate-600 dark:text-slate-400">Escribe al menos
+                                    3 caracteres.</p>
+                            </div>
+
+                            <div class="space-y-1.5">
+                                <label for="cel"
+                                    class="block text-sm font-semibold text-slate-700 dark:text-slate-300 tracking-wide">
+                                    Celular <span aria-hidden="true"
+                                        class="text-rose-700 dark:text-rose-300 ml-0.5">*</span>
+                                </label>
+                                <input id="cel" type="tel" name="cel" minlength="10" maxlength="10" pattern="3[0-9]{9}"
+                                    inputmode="numeric" autocomplete="tel" required aria-describedby="cel-ayuda"
+                                    placeholder="3001234567" title="Ingresa 10 dígitos y comienza por 3."
+                                    class="w-full bg-slate-100 dark:bg-[#263653] border border-slate-500 dark:border-slate-400 rounded-xl px-4 py-2.5
+                                          text-[#14213D] dark:text-white placeholder-slate-600 dark:placeholder-slate-400 text-sm
+                                          focus:outline-none focus:ring-4 focus:ring-emerald-700/50 dark:focus:ring-emerald-300/50 focus:border-emerald-700 dark:focus:border-emerald-300
+                                          hover:border-slate-700 dark:hover:border-slate-300 transition-all duration-200">
+                                <p id="cel-ayuda" class="text-xs text-slate-600 dark:text-slate-400">10 dígitos, sin
+                                    espacios y comenzando por 3.</p>
+                            </div>
+
+                            <div class="space-y-1.5">
+                                <label for="correo"
+                                    class="block text-sm font-semibold text-slate-700 dark:text-slate-300 tracking-wide">
+                                    Correo electrónico <span aria-hidden="true"
+                                        class="text-rose-700 dark:text-rose-300 ml-0.5">*</span>
+                                </label>
+                                <input id="correo" type="email" name="correo" autocomplete="email" required
+                                    aria-describedby="correo-ayuda" placeholder="tu@correo.com"
+                                    class="w-full bg-slate-100 dark:bg-[#263653] border border-slate-500 dark:border-slate-400 rounded-xl px-4 py-2.5
+                                          text-[#14213D] dark:text-white placeholder-slate-600 dark:placeholder-slate-400 text-sm
+                                          focus:outline-none focus:ring-4 focus:ring-emerald-700/50 dark:focus:ring-emerald-300/50 focus:border-emerald-700 dark:focus:border-emerald-300
+                                          hover:border-slate-700 dark:hover:border-slate-300 transition-all duration-200">
+                                <p id="correo-ayuda" class="text-xs text-slate-600 dark:text-slate-400">Usaremos este
+                                    correo para enviarte la confirmación.</p>
+                            </div>
+
+                            <div class="space-y-1.5">
+                                <label for="acompanantes"
+                                    class="block text-sm font-semibold text-slate-700 dark:text-slate-300 tracking-wide">
+                                    Acompañantes <span aria-hidden="true"
+                                        class="text-rose-700 dark:text-rose-300 ml-0.5">*</span>
+                                </label>
+                                <input id="acompanantes" type="number" name="acompanantes" min="0" max="3" step="1"
+                                    value="0" required aria-describedby="acompanantes-ayuda"
+                                    class="w-full bg-slate-100 dark:bg-[#263653] border border-slate-500 dark:border-slate-400 rounded-xl px-4 py-2.5
+                                          text-[#14213D] dark:text-white text-sm
+                                          focus:outline-none focus:ring-4 focus:ring-emerald-700/50 dark:focus:ring-emerald-300/50 focus:border-emerald-700 dark:focus:border-emerald-300
+                                          hover:border-slate-700 dark:hover:border-slate-300 transition-all duration-200">
+                                <p id="acompanantes-ayuda" class="text-xs text-slate-600 dark:text-slate-400">Puedes
+                                    registrar de 0 a 3 acompañantes.</p>
+                            </div>
+                        </fieldset>
+
+                        <button type="submit"
+                            class="w-full bg-emerald-500 hover:bg-emerald-400 focus:outline-none focus:ring-4 focus:ring-emerald-700/50 dark:focus:ring-emerald-300/50 active:bg-emerald-600 active:scale-95 text-slate-950 font-bold uppercase tracking-wide px-6 py-3 rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/20">
+                            Enviar inscripción
+                        </button>
+                    </form>
+
                 </div>
-
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
-                        <span class="block text-2xl font-bold text-white tracking-wide">16 km</span>
-                        <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Distancia</span>
-                    </div>
-                    <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
-                        <span class="block text-2xl font-bold text-white tracking-wide">3 horas</span>
-                        <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Duración</span>
-                    </div>
-                    <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
-                        <span class="block text-2xl font-bold text-emerald-400 tracking-wide">$75.000</span>
-                        <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Por persona</span>
-                    </div>
-                </div>
-
-                <p class="text-slate-400 text-sm">📍 Punto de encuentro: <span class="text-white font-semibold">Sede central</span></p>
-
-                <a href="#inscripcion"
-                    class="inline-block w-full sm:w-auto bg-amber-500 hover:bg-amber-400 focus:outline-none focus:ring-4 focus:ring-amber-500/50 active:bg-amber-600 text-slate-950 font-bold uppercase tracking-wide px-8 py-3.5 rounded-xl transition shadow-lg shadow-amber-500/20">
-                    Inscríbete
-                </a>
             </div>
         </section>
 
-        <!-- ══ CARD 3 — Avanzado (rose) ══ -->
-        <section class="w-full bg-slate-900 rounded-2xl shadow-2xl text-center space-y-6 overflow-hidden border border-rose-500/30">
+        <section id="Planes" class="py-10 md:py-14 lg:py-20 px-4 md:px-8 bg-[#f1ece2] dark:bg-[#101a30]">
+            <div class="max-w-5xl mx-auto space-y-6 md:space-y-10">
 
-            <div class="bg-rose-500 h-1.5 w-full"></div>
+                <div class="text-center space-y-2">
+                    <h2
+                        class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#14213D] dark:text-white tracking-tight">
+                        Planes Rueda Nocturna
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm md:text-base">Elige el plan que mejor se adapte
+                        a tus necesidades y disfruta de beneficios exclusivos.</p>
 
-            <div class="p-8 md:p-12 space-y-6">
-                <div class="inline-block bg-rose-500/10 text-rose-400 text-xs font-semibold uppercase tracking-wider px-4 py-1.5 rounded-full border border-rose-500/30">
-                    ▲ Nivel: Avanzado — Ciclistas experimentados
                 </div>
 
-                <img src="./img/luna.jpg" alt="Luna en palmas"
-                    class="w-full h-56 object-cover rounded-xl mx-auto border border-rose-500/20">
+                     <section id="planes" class="py-10 md:py-14 lg:py-20 px-4 md:px-8 bg-[#f1ece2] dark:bg-[#101a30]">
+            <div class="max-w-5xl mx-auto space-y-8 md:space-y-12">
 
-                <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                    Luna en palmas
-                </h2>
-
-                <p class="text-lg text-slate-300 font-normal leading-relaxed max-w-xl mx-auto">
-                    Disfruta de la luz de la luna en el mirador más emblemático de la ciudad.
-                </p>
-
-                <!-- Indicador de esfuerzo visual -->
-                <div class="flex items-center justify-center gap-1.5">
-                    <span class="text-xs text-slate-400 uppercase tracking-wider mr-2">Esfuerzo</span>
-                    <span class="h-2.5 w-8 rounded-full bg-rose-500"></span>
-                    <span class="h-2.5 w-8 rounded-full bg-rose-500"></span>
-                    <span class="h-2.5 w-8 rounded-full bg-rose-500"></span>
+                <div class="text-center space-y-3">
+                    <h2
+                        class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#14213D] dark:text-white tracking-tight">
+                        Planes Rueda Nocturna
+                    </h2>
+                    <div class="mx-auto h-1 w-16 rounded-full bg-gradient-to-r from-emerald-500 via-amber-500 to-rose-500"></div>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm md:text-base">Elige el plan que mejor se adapte
+                        a tus necesidades y disfruta de beneficios exclusivos.</p>
                 </div>
 
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
-                        <span class="block text-2xl font-bold text-white tracking-wide">22 km</span>
-                        <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Distancia</span>
-                    </div>
-                    <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
-                        <span class="block text-2xl font-bold text-white tracking-wide">3,5 horas</span>
-                        <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Duración</span>
-                    </div>
-                    <div class="w-full sm:w-auto bg-slate-800/80 px-6 py-4 rounded-xl border border-slate-700/60">
-                        <span class="block text-2xl font-bold text-emerald-400 tracking-wide">$95.000</span>
-                        <span class="text-xs uppercase text-slate-400 font-medium tracking-wider">Por persona</span>
-                    </div>
+                <!-- Las 3 cards tienen el mismo borde (border-4) para que ninguna se mueva ni cambie de tamaño.
+                     La etiqueta de "Pareja" es absolute, así no empuja el contenido de las demás. -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch pt-4">
+
+                    <!-- Plan Individual -->
+                    <article
+                        class="flex flex-col bg-white dark:bg-[#1b2b48] rounded-2xl border-4 border-slate-300 dark:border-slate-700/60 shadow-lg p-6 md:p-7 space-y-5">
+                        <div class="space-y-1">
+                            <h3 class="text-xl font-extrabold text-[#14213D] dark:text-white">Individual</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400">Para pedalear a tu propio ritmo.</p>
+                        </div>
+                        <p class="text-3xl font-black text-[#14213D] dark:text-white">$55.000
+                            <span class="block text-xs font-medium text-slate-600 dark:text-slate-400">por persona</span>
+                        </p>
+                        <div class="border-t border-slate-300 dark:border-slate-700/60"></div>
+                        <ul class="space-y-2.5 text-sm text-slate-700 dark:text-slate-300 grow">
+                            <li class="flex gap-2"><span class="text-emerald-700 dark:text-emerald-300">✓</span>Bicicleta y casco</li>
+                            <li class="flex gap-2"><span class="text-emerald-700 dark:text-emerald-300">✓</span>Luces LED y chaleco</li>
+                            <li class="flex gap-2"><span class="text-emerald-700 dark:text-emerald-300">✓</span>Guía certificado</li>
+                            <li class="flex gap-2"><span class="text-emerald-700 dark:text-emerald-300">✓</span>Hidratación</li>
+                        </ul>
+                        <a href="#inscripcion"
+                            class="block w-full text-center bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 focus:outline-none focus:ring-4 focus:ring-slate-700/50 dark:focus:ring-slate-300/50 active:scale-95 border border-slate-300 dark:border-slate-700/60 text-[#14213D] dark:text-white font-bold uppercase tracking-wide py-2.5 rounded-xl transition-all duration-200">
+                            Elegir plan
+                        </a>
+                    </article>
+
+                    <!-- Plan Pareja (destacado) -->
+                    <article
+                        class="relative flex flex-col bg-gradient-to-b from-emerald-50 to-white dark:from-emerald-500/15 dark:to-[#1b2b48] rounded-2xl border-4 border-emerald-500 shadow-2xl shadow-emerald-500/30 p-6 md:p-7 space-y-5">
+
+                        <!-- Etiqueta flotante: no ocupa espacio en el flujo -->
+                        <span
+                            class="absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap inline-flex items-center gap-1.5 bg-gradient-to-r from-emerald-500 to-emerald-400 text-slate-950 text-xs font-extrabold uppercase tracking-widest px-5 py-1.5 rounded-full shadow-lg shadow-emerald-500/40 ring-4 ring-[#f1ece2] dark:ring-[#101a30]">
+                            ★ El más elegido
+                        </span>
+
+                        <div class="space-y-1">
+                            <h3 class="text-xl font-extrabold text-emerald-700 dark:text-emerald-300">Pareja</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400">La mejor forma de vivir la noche en dos.</p>
+                        </div>
+                        <p class="text-3xl font-black text-emerald-700 dark:text-emerald-300">$99.000
+                            <span class="block text-xs font-medium text-slate-600 dark:text-slate-400">las dos personas</span>
+                        </p>
+                        <div class="border-t border-emerald-700/30 dark:border-emerald-500/30"></div>
+                        <ul class="space-y-2.5 text-sm text-slate-700 dark:text-slate-300 grow">
+                            <li class="flex gap-2"><span class="text-emerald-700 dark:text-emerald-300">✓</span>Todo lo del plan Individual</li>
+                            <li class="flex gap-2"><span class="text-emerald-700 dark:text-emerald-300">✓</span>Fotos del recorrido</li>
+                            <li class="flex gap-2"><span class="text-emerald-700 dark:text-emerald-300">✓</span>Snack para dos</li>
+                            <li class="flex gap-2"><span class="text-emerald-700 dark:text-emerald-300">✓</span>Prioridad en la ruta</li>
+                        </ul>
+                        <a href="#inscripcion"
+                            class="block w-full text-center bg-emerald-500 hover:bg-emerald-400 focus:outline-none focus:ring-4 focus:ring-emerald-700/50 dark:focus:ring-emerald-300/50 active:bg-emerald-600 active:scale-95 text-slate-950 font-bold uppercase tracking-wide py-2.5 rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/30">
+                            Elegir plan
+                        </a>
+                    </article>
+
+                    <!-- Plan Grupo -->
+                    <article
+                        class="flex flex-col bg-white dark:bg-[#1b2b48] rounded-2xl border-4 border-slate-300 dark:border-slate-700/60 shadow-lg p-6 md:p-7 space-y-5">
+                        <div class="space-y-1">
+                            <h3 class="text-xl font-extrabold text-[#14213D] dark:text-white">Grupo (4 a 8)</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400">Entre más son, más barato y más divertido.</p>
+                        </div>
+                        <p class="text-3xl font-black text-[#14213D] dark:text-white">$45.000
+                            <span class="block text-xs font-medium text-slate-600 dark:text-slate-400">por persona</span>
+                        </p>
+                        <div class="border-t border-slate-300 dark:border-slate-700/60"></div>
+                        <ul class="space-y-2.5 text-sm text-slate-700 dark:text-slate-300 grow">
+                            <li class="flex gap-2"><span class="text-emerald-700 dark:text-emerald-300">✓</span>Todo lo del plan Individual</li>
+                            <li class="flex gap-2"><span class="text-emerald-700 dark:text-emerald-300">✓</span>Guía exclusivo</li>
+                            <li class="flex gap-2"><span class="text-emerald-700 dark:text-emerald-300">✓</span>Horario a elección</li>
+                            <li class="flex gap-2"><span class="text-emerald-700 dark:text-emerald-300">✓</span>Fotos del grupo</li>
+                        </ul>
+                        <a href="#inscripcion"
+                            class="block w-full text-center bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 focus:outline-none focus:ring-4 focus:ring-slate-700/50 dark:focus:ring-slate-300/50 active:scale-95 border border-slate-300 dark:border-slate-700/60 text-[#14213D] dark:text-white font-bold uppercase tracking-wide py-2.5 rounded-xl transition-all duration-200">
+                            Elegir plan
+                        </a>
+                    </article>
+
                 </div>
-
-                <p class="text-slate-400 text-sm">📍 Punto de encuentro: <span class="text-white font-semibold">Sede central</span></p>
-
-                <a href="#inscripcion"
-                    class="inline-block w-full sm:w-auto bg-rose-500 hover:bg-rose-400 focus:outline-none focus:ring-4 focus:ring-rose-500/50 active:bg-rose-600 text-white font-bold uppercase tracking-wide px-8 py-3.5 rounded-xl transition shadow-lg shadow-rose-500/20">
-                    Inscríbete
-                </a>
             </div>
         </section>
+
+
+
+
+
+
+
+
+
+
+
+                        <!-- ╔══════════════════════════════════════════════════╗
+         ║  COMPONENTES (copiados desde componentes.html)   ║
+         ╚══════════════════════════════════════════════════╝ -->
+                        <section id="componentes"
+                            class="py-10 md:py-14 lg:py-20 px-4 md:px-8 bg-[#f1ece2] dark:bg-[#101a30]">
+                            <div class="max-w-5xl mx-auto space-y-12 md:space-y-16">
+
+                                <div class="text-center space-y-2">
+                                    <h2
+                                        class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#14213D] dark:text-white tracking-tight">
+                                        Kit de Componentes
+                                    </h2>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm md:text-base">Referencia visual
+                                        del
+                                        sistema de diseño aplicado en esta landing.</p>
+                                </div>
+
+                                <!-- Botones -->
+                                <div class="space-y-4">
+                                    <div class="border-b border-slate-300 dark:border-slate-700/60 pb-3">
+                                        <h3 class="text-xl font-extrabold text-[#14213D] dark:text-white">Botones</h3>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Tres variantes con
+                                            hover,
+                                            focus y active visibles.</p>
+                                    </div>
+                                    <div class="flex flex-wrap gap-4 items-center">
+                                        <div class="space-y-1 text-center">
+                                            <a href="#"
+                                                class="inline-block bg-emerald-500 hover:bg-emerald-400 focus:outline-none focus:ring-4 focus:ring-emerald-700/50 dark:focus:ring-emerald-300/50 active:bg-emerald-600 active:scale-95 text-slate-950 font-bold uppercase tracking-wide px-8 py-3.5 rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/20">
+                                                Inscríbete
+                                            </a>
+                                            <p class="text-xs text-slate-600 dark:text-slate-400">Primario</p>
+                                        </div>
+                                        <div class="space-y-1 text-center">
+                                            <a href="#"
+                                                class="inline-block bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 focus:outline-none focus:ring-4 focus:ring-slate-700/50 dark:focus:ring-slate-300/50 active:bg-slate-300 dark:active:bg-slate-900 active:scale-95 border border-slate-300 dark:border-slate-700/60 text-[#14213D] dark:text-white font-bold uppercase tracking-wide px-8 py-3.5 rounded-xl transition-all duration-200">
+                                                Ver ruta
+                                            </a>
+                                            <p class="text-xs text-slate-600 dark:text-slate-400">Secundario</p>
+                                        </div>
+                                        <div class="space-y-1 text-center">
+                                            <a href="#"
+                                                class="inline-block bg-transparent border border-rose-700/60 dark:border-rose-500/60 hover:bg-rose-100 dark:hover:bg-rose-500/10 hover:border-rose-700 dark:hover:border-rose-400 focus:outline-none focus:ring-4 focus:ring-rose-700/50 dark:focus:ring-rose-300/50 active:bg-rose-200 dark:active:bg-rose-500/20 active:scale-95 text-rose-700 dark:text-rose-300 font-bold uppercase tracking-wide px-8 py-3.5 rounded-xl transition-all duration-200">
+                                                Cancelar
+                                            </a>
+                                            <p class="text-xs text-slate-600 dark:text-slate-400">Peligro (outline)</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Alertas -->
+                                <div class="space-y-4">
+                                    <div class="border-b border-slate-300 dark:border-slate-700/60 pb-3">
+                                        <h3 class="text-xl font-extrabold text-[#14213D] dark:text-white">Alertas</h3>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Fondo suave, borde
+                                            lateral de color, título y texto.</p>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div role="note"
+                                            class="flex gap-4 bg-sky-50 dark:bg-sky-500/10 border-l-4 border-sky-700 dark:border-sky-400 rounded-xl px-6 py-4">
+                                            <span
+                                                class="text-sky-700 dark:text-sky-300 text-xl mt-0.5 shrink-0">ℹ</span>
+                                            <div>
+                                                <p
+                                                    class="font-bold text-sky-700 dark:text-sky-300 text-sm uppercase tracking-wider mb-1">
+                                                    Información</p>
+                                                <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                                                    Las
+                                                    rutas nocturnas salen jueves, viernes y sábados.</p>
+                                            </div>
+                                        </div>
+                                        <div role="status" aria-live="polite"
+                                            class="flex gap-4 bg-emerald-50 dark:bg-emerald-500/10 border-l-4 border-emerald-700 dark:border-emerald-400 rounded-xl px-6 py-4">
+                                            <span
+                                                class="text-emerald-700 dark:text-emerald-300 text-xl mt-0.5 shrink-0">✓</span>
+                                            <div>
+                                                <p
+                                                    class="font-bold text-emerald-700 dark:text-emerald-300 text-sm uppercase tracking-wider mb-1">
+                                                    Éxito
+                                                    <span
+                                                        class="ml-2 bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 text-xs font-semibold px-2 py-0.5 rounded-full border border-emerald-700/40 dark:border-emerald-500/30 normal-case tracking-normal">Aviso</span>
+                                                </p>
+                                                <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                                                    ¡Tu
+                                                    inscripción fue confirmada! Recibirás un correo con los detalles.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div role="alert"
+                                            class="flex gap-4 bg-amber-50 dark:bg-amber-500/10 border-l-4 border-amber-700 dark:border-amber-400 rounded-xl px-6 py-4">
+                                            <span
+                                                class="text-amber-700 dark:text-amber-300 text-xl mt-0.5 shrink-0">⚠</span>
+                                            <div>
+                                                <p
+                                                    class="font-bold text-amber-700 dark:text-amber-300 text-sm uppercase tracking-wider mb-1">
+                                                    Advertencia</p>
+                                                <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                                                    "Luna
+                                                    en palmas" requiere experiencia previa. No recomendada para
+                                                    principiantes.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Campos de formulario -->
+                                <div class="space-y-4">
+                                    <div class="border-b border-slate-300 dark:border-slate-700/60 pb-3">
+                                        <h3 class="text-xl font-extrabold text-[#14213D] dark:text-white">Campos de
+                                            formulario</h3>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Etiqueta, borde,
+                                            placeholder, ayuda y foco visible.</p>
+                                    </div>
+                                    <form class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl" novalidate>
+                                        <div class="space-y-1.5">
+                                            <label for="correo2"
+                                                class="block text-sm font-semibold text-slate-700 dark:text-slate-300 tracking-wide">
+                                                Correo electrónico <span
+                                                    class="text-rose-700 dark:text-rose-300 ml-0.5">*</span>
+                                            </label>
+                                            <input id="correo2" type="email" name="correo2" placeholder="tu@correo.com"
+                                                autocomplete="email"
+                                                class="w-full bg-slate-100 dark:bg-[#263653] border border-slate-300 dark:border-slate-700/60 rounded-xl px-4 py-2.5 text-[#14213D] dark:text-white placeholder-slate-600 dark:placeholder-slate-400 text-sm focus:outline-none focus:ring-4 focus:ring-emerald-700/50 dark:focus:ring-emerald-300/50 focus:border-emerald-700 dark:focus:border-emerald-300 hover:border-slate-400 dark:hover:border-slate-600 transition-all duration-200">
+                                            <p class="text-xs text-slate-600 dark:text-slate-400">Para enviarte la
+                                                confirmación de tu inscripción.</p>
+                                        </div>
+                                        <div class="space-y-1.5">
+                                            <label for="celular2"
+                                                class="block text-sm font-semibold text-slate-700 dark:text-slate-300 tracking-wide">
+                                                Celular <span class="text-rose-700 dark:text-rose-300 ml-0.5">*</span>
+                                            </label>
+                                            <input id="celular2" type="tel" name="celular2" placeholder="300 123 4567"
+                                                autocomplete="tel"
+                                                class="w-full bg-slate-100 dark:bg-[#263653] border border-slate-300 dark:border-slate-700/60 rounded-xl px-4 py-2.5 text-[#14213D] dark:text-white placeholder-slate-600 dark:placeholder-slate-400 text-sm focus:outline-none focus:ring-4 focus:ring-emerald-700/50 dark:focus:ring-emerald-300/50 focus:border-emerald-700 dark:focus:border-emerald-300 hover:border-slate-400 dark:hover:border-slate-600 transition-all duration-200">
+                                            <p class="text-xs text-slate-600 dark:text-slate-400">Para coordinar el
+                                                punto de
+                                                encuentro.</p>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </section>
 
     </main>
+
+
+    <!-- ╔══════════════════════════════════════════════════╗
+     ║  PIE DE PÁGINA — 3 bloques con flex             ║
+     ╚══════════════════════════════════════════════════╝ -->
+    <footer
+        class="border-t border-slate-300 dark:border-slate-700/60 bg-white dark:bg-[#1b2b48] py-8 md:py-10 px-4 md:px-8">
+        <div class="max-w-5xl mx-auto">
+
+            <!-- Tres bloques: apilados en móvil, fila desde md -->
+            <div class="flex flex-col md:flex-row gap-8 md:gap-12 md:justify-between">
+
+                <!-- Bloque 1: Marca -->
+                <div class="space-y-3 md:max-w-xs">
+                    <a href="#hero" class="flex items-center gap-2">
+                        <span class="text-emerald-700 dark:text-emerald-300 text-xl">🚲</span>
+                        <span class="font-extrabold text-[#14213D] dark:text-white text-lg tracking-tight">
+                            Rueda<span class="text-emerald-700 dark:text-emerald-300">Nocturna</span>
+                        </span>
+                    </a>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Descubre Medellín en bici cuando se encienden las luces. Rutas guiadas cada jueves, viernes y
+                        sábado.
+                    </p>
+                </div>
+
+                <!-- Bloque 2: Navegación -->
+                <nav aria-label="Pie de página" class="space-y-2">
+                    <p class="text-xs font-semibold uppercase tracking-widest text-slate-600 dark:text-slate-400 mb-3">
+                        Navegación</p>
+                    <ul class="space-y-2">
+                        <li><a href="#rutas"
+                                class="text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors">Rutas</a>
+                        </li>
+                        <li><a href="#como-funciona"
+                                class="text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors">¿Cómo
+                                funciona?</a></li>
+                        <li><a href="#inscripcion"
+                                class="text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors">Inscripción</a>
+                        </li>
+                        <li><a href="#componentes"
+                                class="text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors">Componentes</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Bloque 3: Contacto -->
+                <div class="space-y-2">
+                    <p class="text-xs font-semibold uppercase tracking-widest text-slate-600 dark:text-slate-400 mb-3">
+                        Contacto</p>
+                    <ul class="space-y-2">
+                        <li class="text-sm text-slate-700 dark:text-slate-300">📍 Sede Central, Medellín</li>
+                        <li class="text-sm text-slate-700 dark:text-slate-300">📞 300 123 4567</li>
+                        <li>
+                            <a href="mailto:info@ruedanocturna.co"
+                                class="text-sm text-emerald-700 dark:text-emerald-300 hover:text-emerald-300 transition-colors">
+                                info@ruedanocturna.co
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Línea inferior -->
+            <div class="border-t border-slate-300 dark:border-slate-700/60 mt-8 pt-5 text-center">
+                <p class="text-xs text-slate-600 dark:text-slate-400">© 2026 RuedaLibre · Rueda Nocturna. Todos los
+                    derechos reservados.</p>
+            </div>
+
+        </div>
+    </footer>
 
 </body>
 

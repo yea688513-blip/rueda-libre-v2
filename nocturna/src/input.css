@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@theme base {
+    body {
+        --verde-ruta: #1E7A4F;
+        /* Botones principales y enlaces */
+        --naranja-pedal: #F39A2B;
+        /* Destacados y botones secundarios */
+        --azul-noche: #14213D;
+        /* Títulos, encabezados y bordes */
+        --crema: #FAF6EF;
+        /* Fondo general */
+        --gris-asfalto: #5B6470;
+        /* Texto secundario y párrafos */
+        --blanco: #FFFFFF;
+        /* Fondos de tarjetas y formularios */
+        --amarilloF: #FFD166;
+--font-poppins: 'Poppins', sans-serif;
+        --font-roboto: 'Roboto', sans-serif;
+        --font-montserrat: 'Montserrat', sans-serif;
+    }
+
+}
+
+;
